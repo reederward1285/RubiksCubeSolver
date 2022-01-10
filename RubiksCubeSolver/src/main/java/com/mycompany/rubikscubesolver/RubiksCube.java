@@ -26,8 +26,8 @@ public class RubiksCube {
         
         System.out.println(cube);
         cube = U_Move(cube);
-        char cube6 = cube[6];
-        cube[0] = cube[6];
+//        char cube6 = cube[6];
+//        cube[0] = cube[6];
         System.out.println(cube);
     }
     
