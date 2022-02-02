@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.rubikscubesolver;
 import java.util.Scanner;
 
-/**
- *
+/*
  * @author Daniel, Reeder, Johannes
  */
 public class RubiksCube {
@@ -122,9 +116,7 @@ public class RubiksCube {
       
 
     public static char[] U_prime_Move(char[] cube)
-
     {
-
         // change the letters to be in the right spots
         char cube6 = cube[6];
         char cube0 = cube[0];
@@ -146,7 +138,6 @@ public class RubiksCube {
         char cube51 = cube[51];
         char cube52 = cube[52];
         char cube53 = cube[53];
-
 
         // spot number 7 is changing to be the Farbe in spot 1
         cube[6] = cube0;
@@ -210,6 +201,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         return cube;
+    }
 
     // R
     // R'
@@ -221,4 +213,4 @@ public class RubiksCube {
     // F'
     // B
     // B'    
-}}
+}
