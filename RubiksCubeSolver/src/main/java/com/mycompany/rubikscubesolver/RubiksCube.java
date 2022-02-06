@@ -376,12 +376,187 @@ public class RubiksCube {
         // return the new array with the correct spots
         return cube;
     }
+  
     // L
     // L'
     // D
     // D'
-    // F
-    // F'
+    
+    public static char[] F_Move(char[] cube)
+    {
+       // change the letters to be in the right spots
+        char cube6 = cube[6];
+        char cube7 = cube[7];
+        char cube8 = cube[8];
+        char cube18 = cube[18];
+        char cube19 = cube[19];
+        char cube20 = cube[20];
+        char cube21 = cube[21];
+        char cube23 = cube[23];
+        char cube24 = cube[24];
+        char cube25 = cube[25];
+        char cube26 = cube[26];
+        char cube11 = cube[11];
+        char cube14 = cube[14];
+        char cube17 = cube[17];
+        char cube36 = cube[36];
+        char cube37 = cube[37];
+        char cube38 = cube[38];
+        char cube27 = cube[27];
+        char cube30 = cube[30];
+        char cube33 = cube[33];
+        
+        // spot number 7 is changing to be the Farbe in spot 18
+        cube[6] = cube17;
+
+        // spot number 8 is changing to be the Farbe in spot 15
+        cube[7] = cube14;
+
+        // spot number 9 is changing to be the Farbe in spot 12
+        cube[8] = cube11;
+
+        // spot number 19 is changing to be the Farbe in spot 25
+        cube[18] = cube24;
+
+        // spot number 20 is changing to be the Farbe in spot 22
+        cube[19] = cube21;
+
+        // spot number 21 is changing to be the Farbe in spot 19
+        cube[20] = cube18;
+
+        // spot number 22 is changing to be the Farbe in spot 26
+        cube[21] = cube25;
+
+        // spot number 24 is changing to be the Farbe in spot 20
+        cube[23] = cube19;
+
+        // spot number 25 is changing to be the Farbe in spot 27
+        cube[24] = cube26;
+
+        // spot number 26 is changing to be the Farbe in spot 24
+        cube[25] = cube23;
+
+        // spot number 27 is changing to be the Farbe in spot 21
+        cube[26] = cube20;
+
+        // spot number 12 is changing to be the Farbe in spot 37
+        cube[11] = cube36;
+        
+        // spot number 15 is changing to be the Farbe in spot 38
+        cube[14] = cube37;
+
+        // spot number 18 is changing to be the Farbe in spot 39
+        cube[17] = cube38;
+
+        // spot number 37 is changing to be the Farbe in spot 34
+        cube[36] = cube33;
+
+        // spot number 38 is changing to be the Farbe in spot 31
+        cube[37] = cube30;
+
+        // spot number 39 is changing to be the Farbe in spot 28
+        cube[38] = cube27;
+
+        // spot number 28 is changing to be the Farbe in spot 7
+        cube[27] = cube6;
+
+        // spot number 31 is changing to be the Farbe in spot 8
+        cube[30] = cube7;
+
+        // spot number 34 is changing to be the Farbe in spot 9 
+        cube[33] = cube8;
+
+        // return the new array with the correct spots
+        return cube;
+    }
+    
+    public static char[] F_Prime_Move(char[] cube)
+    {
+        // change the letters to be in the right spots
+        char cube6 = cube[6];
+        char cube7 = cube[7];
+        char cube8 = cube[8];
+        char cube18 = cube[18];
+        char cube19 = cube[19];
+        char cube20 = cube[20];
+        char cube21 = cube[21];
+        char cube23 = cube[23];
+        char cube24 = cube[24];
+        char cube25 = cube[25];
+        char cube26 = cube[26];
+        char cube11 = cube[11];
+        char cube14 = cube[14];
+        char cube17 = cube[17];
+        char cube36 = cube[36];
+        char cube37 = cube[37];
+        char cube38 = cube[38];
+        char cube27 = cube[27];
+        char cube30 = cube[30];
+        char cube33 = cube[33];
+        
+        // spot number 18 is changing to be the Farbe in spot 7
+        cube[17] = cube6;
+
+        // spot number 15 is changing to be the Farbe in spot 8
+        cube[14] = cube7;
+
+        // spot number 12 is changing to be the Farbe in spot 9
+        cube[11] = cube8;
+
+        // spot number 25 is changing to be the Farbe in spot 19
+        cube[24] = cube18;
+
+        // spot number 22 is changing to be the Farbe in spot 20
+        cube[21] = cube19;
+
+        // spot number 19 is changing to be the Farbe in spot 21
+        cube[18] = cube20;
+
+        // spot number 26 is changing to be the Farbe in spot 22
+        cube[25] = cube21;
+
+        // spot number 20 is changing to be the Farbe in spot 24
+        cube[19] = cube23;
+
+        // spot number 27 is changing to be the Farbe in spot 25
+        cube[26] = cube24;
+
+        // spot number 24 is changing to be the Farbe in spot 26
+        cube[23] = cube25;
+
+        // spot number 21 is changing to be the Farbe in spot 27
+        cube[20] = cube26;
+
+        // spot number 37 is changing to be the Farbe in spot 12
+        cube[36] = cube11;
+        
+        // spot number 38 is changing to be the Farbe in spot 15
+        cube37 = cube14;
+
+        // spot number 39 is changing to be the Farbe in spot 18
+        cube[38] = cube17;
+
+        // spot number 34 is changing to be the Farbe in spot 37
+        cube[33] = cube36;
+
+        // spot number 31 is changing to be the Farbe in spot 38
+        cube[30] = cube37;
+
+        // spot number 28 is changing to be the Farbe in spot 39
+        cube[27] = cube38;
+
+        // spot number 7 is changing to be the Farbe in spot 28
+        cube[6] = cube27;
+
+        // spot number 8 is changing to be the Farbe in spot 31
+        cube[7] = cube30;
+
+        // spot number 9 is changing to be the Farbe in spot 34
+        cube[8] = cube33;
+
+        // return the new array with the correct spots
+        return cube;
+    }
     // B
     // B'    
 }
