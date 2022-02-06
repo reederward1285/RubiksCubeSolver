@@ -19,9 +19,7 @@ public class RubiksCube {
                       };
         
         System.out.println(cube);
-        cube = R_prime_Move(cube);
-        char cube6 = cube[6];
-        cube[0] = cube[6];
+        cube = R_Prime_Move(cube);
         System.out.println(cube);
     }
   
