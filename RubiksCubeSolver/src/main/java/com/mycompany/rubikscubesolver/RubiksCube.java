@@ -19,15 +19,11 @@ public class RubiksCube {
                       };
         
         System.out.println(cube);
-        cube = R_prime_Move(cube);
-        char cube6 = cube[6];
-        cube[0] = cube[6];
+        cube = R_Prime_Move(cube);
         System.out.println(cube);
     }
   
-    // U
     public static char[] U_Move(char[] cube)
-    
     {
         // change the letters to be in the right spots
         char cube6 = cube[6];
@@ -115,9 +111,7 @@ public class RubiksCube {
         return cube;
     }
 
-    // U'
     public static char[] U_Prime_Move(char[] cube)
-   
     {
         // change the letters to be in the right spots
         char cube6 = cube[6];
@@ -205,9 +199,7 @@ public class RubiksCube {
         return cube;
     }
 
-    // R'
     public static char[] R_Prime_Move(char[] cube)
-    
     {
         // change the letters to be in the right spots
         char cube2 = cube[2];
@@ -295,9 +287,7 @@ public class RubiksCube {
         return cube;
     }
     
-    // R
     public static char[] R_Move(char[] cube)
-   
     {
         // change the letters to be in the right spots
         char cube2 = cube[2];
@@ -384,13 +374,11 @@ public class RubiksCube {
         // return the new array with the correct spots
         return cube;
     }
+  
     // L
     // L'
-    // D
     public static char[] D_Move(char[] cube)
-            
     {
-
         // change the letters to be in the right spots
         char cube15 = cube[15];
         char cube16 = cube[16];
@@ -478,11 +466,8 @@ public class RubiksCube {
         return cube;
     }
     
-    // D'
-    public static char[] D_prime_Move(char[] cube)
-            
+    public static char[] D_Prime_Move(char[] cube)
     {
-
         // change the letters to be in the right spots
         char cube15 = cube[15];
         char cube16 = cube[16];
@@ -570,9 +555,7 @@ public class RubiksCube {
         return cube;
     }
     
-    //F
     public static char[] F_Move(char[] cube)
-            
     {
        // change the letters to be in the right spots
         char cube6 = cube[6];
@@ -660,9 +643,7 @@ public class RubiksCube {
         return cube;
     }
     
-    //F'
     public static char[] F_Prime_Move(char[] cube)
-            
     {
         // change the letters to be in the right spots
         char cube6 = cube[6];
@@ -749,7 +730,7 @@ public class RubiksCube {
         // return the new array with the correct spots
         return cube;
     }
-    
+
     // B
     // B'    
 }
