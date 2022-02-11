@@ -376,8 +376,6 @@ public class RubiksCube {
         return cube;
     }
   
-    // L
-    // L'
     public static char[] D_Move(char[] cube)
     {
         // change the letters to be in the right spots
@@ -780,7 +778,7 @@ public class RubiksCube {
         // spot number 24 is changing to be the Farbe in spot 20
         cube[48] = cube39;
 
-        // spot number 25 is changing to be the Farbe in spot 27 hier
+        // spot number 25 is changing to be the Farbe in spot 27
         cube[51] = cube42;
 
         // spot number 26 is changing to be the Farbe in spot 24
@@ -906,7 +904,5 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         return cube;
-    }
-    // B
-    // B'    
+    }  
 }
