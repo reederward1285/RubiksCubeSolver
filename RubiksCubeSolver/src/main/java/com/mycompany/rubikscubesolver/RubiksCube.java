@@ -19,7 +19,8 @@ public class RubiksCube {
                       };
         
         System.out.println(cube);
-        cube = R_Prime_Move(cube);
+        //cube = L_Prime_Move(cube);
+        cube = L_Move(cube);
         System.out.println(cube);
     }
   
@@ -731,7 +732,7 @@ public class RubiksCube {
         return cube;
     }
 
-       public static char[] L_Move(char[] cube)
+    public static char[] L_Move(char[] cube)
     {
        // change the letters to be in the right spots
         char cube9 = cube[9];
@@ -819,7 +820,7 @@ public class RubiksCube {
         return cube;
     }
     
-    public static char[] L_prime_Move(char[] cube)
+    public static char[] L_Prime_Move(char[] cube)
     {
        // change the letters to be in the right spots
         char cube9 = cube[9];
