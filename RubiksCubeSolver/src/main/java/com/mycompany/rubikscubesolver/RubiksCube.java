@@ -1,6 +1,4 @@
 package com.mycompany.rubikscubesolver;
-import java.util.Scanner;
-
 /*
  * @author Daniel, Reeder, Johannes, Ömer
  */
