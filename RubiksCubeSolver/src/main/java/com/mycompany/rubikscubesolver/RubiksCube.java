@@ -1,4 +1,6 @@
 package com.mycompany.rubikscubesolver;
+
+import java.util.Scanner;
 /*
  * @author Daniel, Reeder, Johannes, Ömer
  */
@@ -15,13 +17,25 @@ public class RubiksCube {
                         'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
                         'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',
                       };
-        
+    //W=0
+    
+    Scanner eingabe = new Scanner(System.in);
+    char[] cube0;
+    
+    for (int whichSpot = 0; whichSpot < 56; whichSpot++)
+    {
+        System.out.println("Give W" + whichSpot + ": ");
+        cube[whichSpot] = eingabe.next().charAt(0);
+        // lets use nextint and maybe 1 = W and 2 = G etc.
+    }
+    
+    
         System.out.println(cube);
         //cube = L_Prime_Move(cube);
         cube = L_Move(cube);
         System.out.println(cube);
     }
-  
+    
     public static char[] U_Move(char[] cube)
     {
         // change the letters to be in the right spots
