@@ -18,11 +18,9 @@ public class RubiksCube {
                         'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',
                       };
         
-        System.out.println(cube);
-        cube = Bp(cube);
-        // char cube6 = cube[6];
-        // cube[0] = cube[6];
-        System.out.println(cube);
+        System.out.println(cube); // this shows cube before move
+        cube = AdjacentEdgeSwap(cube); // do the move
+        System.out.println(cube); // this shows cube after move
     }
     
     public static char[] AdjacentEdgeSwap(char[] cube)
@@ -35,9 +33,7 @@ public class RubiksCube {
         cube = R(cube);
         cube = L(cube);
         cube = L(cube);
-        cube = B(cube);
-        cube = B(cube);
-        cube = B(cube);
+        cube = Bp(cube);
         cube = R(cube);
         cube = R(cube);
         cube = L(cube);
@@ -53,9 +49,27 @@ public class RubiksCube {
         cube = L(cube);
         cube = U(cube);
         
+        return cube; 
+    }
+    
+    public static char[] Turns(char[] cube)
+    {
+        cube = R(cube);
+        cube = L(cube);
+        cube = U(cube);
+        cube = D(cube);
+        cube = F(cube);
+        cube = B(cube);
+        cube = Rp(cube);
+        cube = Lp(cube);
+        cube = Up(cube);
+        cube = Dp(cube);
+        cube = Fp(cube);
+        cube = Bp(cube);
         return cube;
     }
     
+    // U
     public static char[] U(char[] cube)
     {
         // change the letters to be in the right spots
@@ -143,7 +157,8 @@ public class RubiksCube {
         // return the new array with the correct spots
         return cube;
     }
-
+      
+    // U'
     public static char[] Up(char[] cube)
     {
         // change the letters to be in the right spots
@@ -167,7 +182,6 @@ public class RubiksCube {
         char cube51 = cube[51];
         char cube52 = cube[52];
         char cube53 = cube[53];
-
 
         // spot number 7 is changing to be the Farbe in spot 1
         cube[6] = cube0;
@@ -233,6 +247,7 @@ public class RubiksCube {
         return cube;
     }
 
+    // R
     public static char[] R(char[] cube)
     {
         // change the letters to be in the right spots
@@ -256,7 +271,6 @@ public class RubiksCube {
         char cube33 = cube[33];
         char cube34 = cube[34];
         char cube35 = cube[35];
-
 
         // spot number 3 is changing to be the Farbe in spot 21
         cube[2] = cube20;
@@ -295,33 +309,34 @@ public class RubiksCube {
         cube[53] = cube8;
         
         // spot number 28 is changing to be the Farbe in spot 30
-        cube[27] = cube29;
+        cube[27] = cube33;
 
         // spot number 29 is changing to be the Farbe in spot 33
-        cube[28] = cube32;
+        cube[28] = cube30;
 
         // spot number 30 is changing to be the Farbe in spot 36
-        cube[29] = cube35;
+        cube[29] = cube27;
 
         // spot number 31 is changing to be the Farbe in spot 29
-        cube[30] = cube28;
+        cube[30] = cube34;
 
         // spot number 33 is changing to be the Farbe in spot 35
-        cube[32] = cube34;
+        cube[32] = cube28;
 
         // spot number 34 is changing to be the Farbe in spot 28
-        cube[33] = cube27;
+        cube[33] = cube35;
 
         // spot number 35 is changing to be the Farbe in spot 31
-        cube[34] = cube30;
+        cube[34] = cube32;
 
         // spot number 36 is changing to be the Farbe in spot 34
-        cube[35] = cube33;
+        cube[35] = cube30;
 
         // return the new array with the correct spots
         return cube;
     }
     
+    // R'
     public static char[] Rp(char[] cube)
     {
         // change the letters to be in the right spots
@@ -345,8 +360,7 @@ public class RubiksCube {
         char cube33 = cube[33];
         char cube34 = cube[34];
         char cube35 = cube[35];
-
-
+        
         // spot number 3 is changing to be the Farbe in spot 48
         cube[2] = cube47;
 
@@ -384,34 +398,35 @@ public class RubiksCube {
         cube[53] = cube44;
         
         // spot number 28 is changing to be the Farbe in spot 34
-        cube[27] = cube33;
+        cube[27] = cube29;
 
         // spot number 29 is changing to be the Farbe in spot 31
-        cube[28] = cube30;
+        cube[28] = cube32;
 
         // spot number 30 is changing to be the Farbe in spot 28
-        cube[29] = cube27;
+        cube[29] = cube35;
 
         // spot number 31 is changing to be the Farbe in spot 35
-        cube[30] = cube34;
+        cube[30] = cube28;
 
         // spot number 33 is changing to be the Farbe in spot 29
-        cube[32] = cube28;
+        cube[32] = cube34;
 
         // spot number 34 is changing to be the Farbe in spot 36
-        cube[33] = cube35;
+        cube[33] = cube27;
 
         // spot number 35 is changing to be the Farbe in spot 33
-        cube[34] = cube32;
+        cube[34] = cube30;
 
         // spot number 36 is changing to be the Farbe in spot 30 
-        cube[35] = cube29;
+        cube[35] = cube33;
 
         // return the new array with the correct spots
         return cube;
     }
-
-    public static char[] L(char[] cube)
+    
+    // L
+     public static char[] L(char[] cube)
     {
        // change the letters to be in the right spots
         char cube9 = cube[9];
@@ -435,22 +450,22 @@ public class RubiksCube {
         char cube48 = cube[48];
         char cube51 = cube[51];
         
-        // spot number 10 is changing to be the Farbe in spot 43
+        // spot number 19 is changing to be the Farbe in spot 1
         cube[18] = cube0;
 
-        // spot number 13 is changing to be the Farbe in spot 40
+        // spot number 22 is changing to be the Farbe in spot 4
         cube[21] = cube3;
 
-        // spot number 16 is changing to be the Farbe in spot 37
+        // spot number 25 is changing to be the Farbe in spot 7
         cube[24] = cube6;
 
-        // spot number 19 is changing to be the Farbe in spot 25
+        // spot number 37 is changing to be the Farbe in spot 25
         cube[36] = cube18;
 
-        // spot number 20 is changing to be the Farbe in spot 22
+        // spot number 40 is changing to be the Farbe in spot 22
         cube[39] = cube21;
 
-        // spot number 21 is changing to be the Farbe in spot 19
+        // spot number 43 is changing to be the Farbe in spot 19
         cube[42] = cube24;
 
         // spot number 22 is changing to be the Farbe in spot 26
@@ -498,7 +513,8 @@ public class RubiksCube {
         // return the new array with the correct spots
         return cube;
     }
-
+     
+    // L'
     public static char[] Lp(char[] cube)
     {
        // change the letters to be in the right spots
@@ -587,9 +603,9 @@ public class RubiksCube {
         return cube;
     }
     
-    public static char[] D(char[] cube)
+    // D
+    public static char[] D(char[] cube)       
     {
-
         // change the letters to be in the right spots
         char cube15 = cube[15];
         char cube16 = cube[16];
@@ -612,15 +628,14 @@ public class RubiksCube {
         char cube43 = cube[43];
         char cube44 = cube[44];
 
-
-        // spot number 16 is changing to be the Farbe in spot 46
-        cube[15] = cube45;
+        // spot number 16 is changing to be the Farbe in spot 48
+        cube[15] = cube47;
 
         // spot number 17 is changing to be the Farbe in spot 47
         cube[16] = cube46;
 
-        // spot number 18 is changing to be the Farbe in spot 48
-        cube[17] = cube47;
+        // spot number 18 is changing to be the Farbe in spot 46
+        cube[17] = cube45;
 
         // spot number 25 is changing to be the Farbe in spot 16
         cube[24] = cube15;
@@ -649,35 +664,36 @@ public class RubiksCube {
         // spot number 48 is changing to be the Farbe in spot 36
         cube[47] = cube35;
         
-        // spot number 37 is changing to be the Farbe in spot 39
-        cube[36] = cube38;
+        // spot number 37 is changing to be the Farbe in spot 43
+        cube[36] = cube42;
 
-        // spot number 38 is changing to be the Farbe in spot 42
-        cube[37] = cube41;
+        // spot number 38 is changing to be the Farbe in spot 40
+        cube[37] = cube39;
 
-        // spot number 39 is changing to be the Farbe in spot 45
-        cube[38] = cube44;
+        // spot number 39 is changing to be the Farbe in spot 37
+        cube[38] = cube36;
 
-        // spot number 40 is changing to be the Farbe in spot 38
-        cube[39] = cube37;
+        // spot number 40 is changing to be the Farbe in spot 44
+        cube[39] = cube43;
 
-        // spot number 42 is changing to be the Farbe in spot 44
-        cube[41] = cube43;
+        // spot number 42 is changing to be the Farbe in spot 38
+        cube[41] = cube37;
 
-        // spot number 43 is changing to be the Farbe in spot 37
-        cube[42] = cube36;
+        // spot number 43 is changing to be the Farbe in spot 45
+        cube[42] = cube44;
 
-        // spot number 44 is changing to be the Farbe in spot 40
-        cube[43] = cube39;
+        // spot number 44 is changing to be the Farbe in spot 42
+        cube[43] = cube41;
 
-        // spot number 45 is changing to be the Farbe in spot  43
-        cube[44] = cube42;
+        // spot number 45 is changing to be the Farbe in spot 39
+        cube[44] = cube38;
 
         // return the new array with the correct spots
         return cube;
     }
     
-    public static char[] Dp(char[] cube)
+    // D'
+    public static char[] Dp(char[] cube)        
     {
         // change the letters to be in the right spots
         char cube15 = cube[15];
@@ -701,7 +717,6 @@ public class RubiksCube {
         char cube43 = cube[43];
         char cube44 = cube[44];
 
-
         // spot number 16 is changing to be the Farbe in spot 25
         cube[15] = cube24;
 
@@ -720,14 +735,14 @@ public class RubiksCube {
         // spot number 27 is changing to be the Farbe in spot 36
         cube[26] = cube35;
 
-        // spot number 34 is changing to be the Farbe in spot 46
-        cube[33] = cube45;
+        // spot number 34 is changing to be the Farbe in spot 48
+        cube[33] = cube47;
 
         // spot number 35 is changing to be the Farbe in spot 47
         cube[34] = cube46;
 
-        // spot number 36 is changing to be the Farbe in spot 48
-        cube[35] = cube47;
+        // spot number 36 is changing to be the Farbe in spot 46
+        cube[35] = cube45;
 
         // spot number 46 is changing to be the Farbe in spot 16
         cube[45] = cube15;
@@ -738,35 +753,36 @@ public class RubiksCube {
         // spot number 48 is changing to be the Farbe in spot 18
         cube[47] = cube17;
         
-        // spot number 37 is changing to be the Farbe in spot 43
-        cube[36] = cube42;
+        // spot number 37 is changing to be the Farbe in spot 39
+        cube[36] = cube38;
 
-        // spot number 38 is changing to be the Farbe in spot 40
-        cube[37] = cube39;
+        // spot number 38 is changing to be the Farbe in spot 42
+        cube[37] = cube41;
 
-        // spot number 39 is changing to be the Farbe in spot 37
-        cube[38] = cube36;
+        // spot number 39 is changing to be the Farbe in spot 45
+        cube[38] = cube44;
 
-        // spot number 40 is changing to be the Farbe in spot 44
-        cube[39] = cube43;
+        // spot number 40 is changing to be the Farbe in spot 38
+        cube[39] = cube37;
 
-        // spot number 42 is changing to be the Farbe in spot 38
-        cube[41] = cube37;
+        // spot number 42 is changing to be the Farbe in spot 44
+        cube[41] = cube43;
 
-        // spot number 43 is changing to be the Farbe in spot 45
-        cube[42] = cube44;
+        // spot number 43 is changing to be the Farbe in spot 37
+        cube[42] = cube36;
 
-        // spot number 44 is changing to be the Farbe in spot 42
-        cube[43] = cube41;
+        // spot number 44 is changing to be the Farbe in spot 40
+        cube[43] = cube39;
 
-        // spot number 45 is changing to be the Farbe in spot 39  
-        cube[44] = cube38;
+        // spot number 45 is changing to be the Farbe in spot 43
+        cube[44] = cube42;
 
         // return the new array with the correct spots
         return cube;
     }
     
-    public static char[] F(char[] cube)
+    // F
+    public static char[] F(char[] cube)    
     {
        // change the letters to be in the right spots
         char cube6 = cube[6];
@@ -854,7 +870,8 @@ public class RubiksCube {
         return cube;
     }
     
-    public static char[] Fp(char[] cube)
+    // F'
+    public static char[] Fp(char[] cube)     
     {
         // change the letters to be in the right spots
         char cube6 = cube[6];
@@ -942,7 +959,8 @@ public class RubiksCube {
         return cube;
     }
     
-    public static char[] B(char[] cube)
+    // B
+    public static char[] B(char[] cube)    
     {
         // change the letters to be in the right spots
         char cube0 = cube[0];
@@ -1003,34 +1021,35 @@ public class RubiksCube {
         cube[44] = cube15;
         
         // spot number 46 is changing to be the Farbe in spot 48
-        cube[45] = cube47;
+        cube[45] = cube51;
 
         // spot number 47 is changing to be the Farbe in spot 51
-        cube[46] = cube50;
+        cube[46] = cube48;
 
         // spot number 48 is changing to be the Farbe in spot 54
-        cube[47] = cube53;
+        cube[47] = cube45;
 
         // spot number 49 is changing to be the Farbe in spot 47
-        cube[48] = cube46;
+        cube[48] = cube52;
 
         // spot number 51 is changing to be the Farbe in spot 53
-        cube[50] = cube52;
+        cube[50] = cube46;
 
         // spot number 52 is changing to be the Farbe in spot 46
-        cube[51] = cube45;
+        cube[51] = cube53;
 
         // spot number 53 is changing to be the Farbe in spot 49
-        cube[52] = cube48;
+        cube[52] = cube50;
 
         // spot number 54 is changing to be the Farbe in spot 52
-        cube[53] = cube51;
+        cube[53] = cube47;
 
         // return the new array with the correct spots
         return cube;
     }
     
-    public static char[] Bp(char[] cube)
+    // B'
+       public static char[] Bp(char[] cube)       
     {
         // change the letters to be in the right spots
         char cube0 = cube[0];
@@ -1093,16 +1112,16 @@ public class RubiksCube {
         // spot number 46 is changing to be the Farbe in spot 52
         cube[45] = cube51;
 
-        // spot number 47 is changing to be the Farbe in spot 51
+        // spot number 47 is changing to be the Farbe in spot 49
         cube[46] = cube48;
 
-        // spot number 48 is changing to be the Farbe in spot 54
+        // spot number 48 is changing to be the Farbe in spot 46
         cube[47] = cube45;
 
-        // spot number 49 is changing to be the Farbe in spot 47
+        // spot number 49 is changing to be the Farbe in spot 53
         cube[48] = cube52;
 
-        // spot number 51 is changing to be the Farbe in spot 53
+        // spot number 51 is changing to be the Farbe in spot 47
         cube[50] = cube46;
 
         // spot number 52 is changing to be the Farbe in spot 54
@@ -1116,5 +1135,5 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         return cube;
-    }
+    }   
 }
