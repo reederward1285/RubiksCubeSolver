@@ -17,22 +17,69 @@ public class RubiksCube {
                         'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
                         'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',
                       };
-    //W=0
-    
+     
+    int w_counter = 0;
+    int o_counter = 0;
+    int g_counter = 0;
+    int r_counter = 0;
+    int y_counter = 0;
+    int b_counter = 0;
+    final int MAX_COLOR = 9;
+
+    System.out.println("RUBIK'S CUBE SOLVER");
+    System.out.println("");
+    System.out.println("Add your colors");
     Scanner eingabe = new Scanner(System.in);
-    char[] cube0;
     
-    for (int whichSpot = 0; whichSpot < 56; whichSpot++)
+    for (int whichSpot = 0; whichSpot <= 53; whichSpot++)
     {
-        System.out.println("Give W" + whichSpot + ": ");
-        cube[whichSpot] = eingabe.next().charAt(0);
-        // lets use nextint and maybe 1 = W and 2 = G etc.
+        System.out.println("Give " + whichSpot + ": ");
+        //bool is_value_set = false;
+        // while is_value_set != false
+        char user_color = eingabe.next().charAt(0);
+        
+        if (user_color == 'W' && w_counter <9){
+            cube[whichSpot] = user_color;
+            w_counter++;
+        }
+        else if (user_color == 'O' && o_counter <9) {
+            System.out.println("Value has been set");
+            cube[whichSpot] = user_color;
+            o_counter++;
+        }
+        else if (user_color == 'G' && g_counter <9) {
+            System.out.println("Value has been set");
+            cube[whichSpot] = user_color;
+            g_counter++;
+        }
+        else if (user_color == 'R' && r_counter <9) {
+            System.out.println("Value has been set");
+            cube[whichSpot] = user_color;
+            r_counter++;
+        }
+        else if (user_color == 'Y' && y_counter <9) {
+            System.out.println("Value has been set");
+            cube[whichSpot] = user_color;
+            y_counter++;
+        }
+        else if (user_color == 'B' && b_counter <9) {
+            System.out.println("Value has been set");
+            cube[whichSpot] = user_color;
+            b_counter++;
+        }
+        
+        else{
+            System.out.println("");
+            System.out.println("Color maximum used");
+            System.out.println("Value hasn't been set");
+        }
+        
     }
     
     
         System.out.println(cube);
-        //cube = L_Prime_Move(cube);
-        cube = L_Move(cube);
+        cube = L_Prime_Move(cube);
+        //cube = L_Move(cube);
         System.out.println(cube);
     }
     
