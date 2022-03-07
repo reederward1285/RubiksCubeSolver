@@ -2,7 +2,7 @@ package com.mycompany.rubikscubesolver;
 
 import java.util.Scanner;
 /*
- * @author Daniel, Reeder, Johannes, Ömer
+ * @author Daniel, Reeder, Johannes, Öme
  */
 public class RubiksCube {
     // arrays start counting from zero
