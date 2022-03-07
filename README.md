@@ -24,6 +24,31 @@ public static char[] CaseExample(char[] cube)
 ```
 
 # Algorithms
+
+Number of Algorithms:
+
+Cross:
+
+    4 Pieces * 12 spots * 2 sides = 96 cases
+
+F2L:
+
+    Corners:
+
+    Edges:
+
+    F2L:
+
+OLL:
+
+    1. Step: 1 dot case + 1 finished cross + 2 line cases + 4 L cases = 8 cases
+    2. Step: 
+
+PLL:
+
+    1. Step:
+    2. Step:
+    
 ```
 public static char[] AlgorithmExample(char[] cube)
 {
