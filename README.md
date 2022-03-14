@@ -98,3 +98,9 @@ public static char[] U_Move(char[] cube)
     return cube;
 }
 ```
+
+OLL's from 
+https://jperm.net/algs/2lookoll
+
+PLL's from:
+https://jperm.net/algs/2lookpll
