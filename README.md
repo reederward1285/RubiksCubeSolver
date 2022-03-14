@@ -41,13 +41,13 @@ F2L:
 
 OLL:
 
-    1. Step: 1 dot case + 1 finished cross + 2 line cases + 4 L cases = 8 cases
-    2. Step: 
+    1. Step (edges): 1 dot case + 1 finished cross + 2 line cases + 4 L cases = 8 cases
+    2. Step (corners): T-case + H-case + U-case + L-case + Pi-case + Sune-case + Antisune-case * 4 Orientations = 28 cases
 
 PLL:
 
-    1. Step:
-    2. Step:
+    1. Step (corners): 2 diagonal case + 2 headlight cases = 4 cases
+    2. Step (edges): 1 H-PLL + 4 Ua-cases + 4 Ub-cases + 2 Z-cases = 11 cases
 
 
 ```
