@@ -54,22 +54,17 @@ public class RubiksCube {
     
     public static char[] Turns(char[] cube)
     {
-        cube = R(cube);
-        cube = L(cube);
-        cube = U(cube);
-        cube = D(cube);
-        cube = F(cube);
-        cube = B(cube);
-        cube = Rp(cube);
-        cube = Lp(cube);
-        cube = Up(cube);
-        cube = Dp(cube);
         cube = Fp(cube);
+        cube = R(cube);
+        cube = Up(cube);
+        cube = L(cube);
+        cube = D(cube);
         cube = Bp(cube);
-        return cube;
+        cube = Rp(cube);
+        cube = U(cube);
     }
     
-    // U
+     // U
     public static char[] U(char[] cube)
     {
         // change the letters to be in the right spots
@@ -330,7 +325,7 @@ public class RubiksCube {
         cube[34] = cube32;
 
         // spot number 36 is changing to be the Farbe in spot 34
-        cube[35] = cube30;
+        cube[35] = cube29;
 
         // return the new array with the correct spots
         return cube;
@@ -487,28 +482,28 @@ public class RubiksCube {
         cube[6] = cube51;
         
         // spot number 15 is changing to be the Farbe in spot 38
-        cube[9] = cube11;
+        cube[9] = cube15;
 
         // spot number 37 is changing to be the Farbe in spot 34
-        cube[10] = cube14;
-
-        // spot number 38 is changing to be the Farbe in spot 31
-        cube[12] = cube17;
-
-        // spot number 39 is changing to be the Farbe in spot 28
-        cube[14] = cube16;
-
-        // spot number 28 is changing to be the Farbe in spot 7
-        cube[17] = cube15;
-
-        // spot number 31 is changing to be the Farbe in spot 8
-        cube[16] = cube12;
-
-        // spot number 34 is changing to be the Farbe in spot 9 
-        cube[15] = cube9;
+        cube[10] = cube12;
         
         // spot number 34 is changing to be the Farbe in spot 9 
-        cube[12] = cube10;
+        cube[11] = cube9;
+
+        // spot number 38 is changing to be the Farbe in spot 31
+        cube[12] = cube16;
+
+        // spot number 39 is changing to be the Farbe in spot 28
+        cube[14] = cube10;
+
+        // spot number 28 is changing to be the Farbe in spot 7
+        cube[15] = cube17;
+
+        // spot number 31 is changing to be the Farbe in spot 8
+        cube[16] = cube14;
+
+        // spot number 34 is changing to be the Farbe in spot 9 
+        cube[17] = cube11;
 
         // return the new array with the correct spots
         return cube;
@@ -932,7 +927,7 @@ public class RubiksCube {
         cube[36] = cube11;
         
         // spot number 38 is changing to be the Farbe in spot 15
-        cube37 = cube14;
+        cube[37] = cube14;
 
         // spot number 39 is changing to be the Farbe in spot 18
         cube[38] = cube17;
@@ -1021,35 +1016,35 @@ public class RubiksCube {
         cube[44] = cube15;
         
         // spot number 46 is changing to be the Farbe in spot 48
-        cube[45] = cube51;
+        cube[45] = cube47;
 
         // spot number 47 is changing to be the Farbe in spot 51
-        cube[46] = cube48;
+        cube[46] = cube50;
 
         // spot number 48 is changing to be the Farbe in spot 54
-        cube[47] = cube45;
+        cube[47] = cube53;
 
         // spot number 49 is changing to be the Farbe in spot 47
-        cube[48] = cube52;
+        cube[48] = cube46;
 
         // spot number 51 is changing to be the Farbe in spot 53
-        cube[50] = cube46;
+        cube[50] = cube52;
 
         // spot number 52 is changing to be the Farbe in spot 46
-        cube[51] = cube53;
+        cube[51] = cube45;
 
         // spot number 53 is changing to be the Farbe in spot 49
-        cube[52] = cube50;
+        cube[52] = cube48;
 
         // spot number 54 is changing to be the Farbe in spot 52
-        cube[53] = cube47;
+        cube[53] = cube51;
 
         // return the new array with the correct spots
         return cube;
     }
     
     // B'
-       public static char[] Bp(char[] cube)       
+    public static char[] Bp(char[] cube)       
     {
         // change the letters to be in the right spots
         char cube0 = cube[0];
