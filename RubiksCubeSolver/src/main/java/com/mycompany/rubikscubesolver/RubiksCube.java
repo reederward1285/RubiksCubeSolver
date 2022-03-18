@@ -1,5 +1,4 @@
 package com.mycompany.rubikscubesolver;
-import java.util.Scanner;
 
 /*
  * @author Daniel, Johannes, Ömer
@@ -48,8 +47,8 @@ public class RubiksCube {
         cube = L(cube);
         cube = L(cube);
         cube = U(cube);
-        
-        return cube; 
+
+        return cube;
     }
     
     public static char[] Turns(char[] cube)
