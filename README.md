@@ -24,6 +24,32 @@ public static char[] CaseExample(char[] cube)
 ```
 
 # Algorithms
+
+Number of Algorithms:
+
+Cross:
+
+    4 Pieces * 12 spots * 2 sides = 96 cases
+
+F2L:
+
+    Corners:
+
+    Edges:
+
+    F2L:
+
+OLL:
+
+    1. Step (edges): 1 dot case + 1 finished cross + 2 line cases + 4 L cases = 8 cases
+    2. Step (corners): 2 H-cases + (T-case + U-case + L-case + Pi-case + Sune-case + Antisune-case) * 4 Orientations = 26 cases
+
+PLL:
+
+    1. Step (corners): 2 diagonal case + 2 headlight cases = 4 cases
+    2. Step (edges): 1 H-PLL + 4 Ua-cases + 4 Ub-cases + 2 Z-cases = 11 cases
+
+
 ```
 public static char[] AlgorithmExample(char[] cube)
 {
@@ -72,3 +98,9 @@ public static char[] U_Move(char[] cube)
     return cube;
 }
 ```
+
+OLL's from 
+https://jperm.net/algs/2lookoll
+
+PLL's from:
+https://jperm.net/algs/2lookpll
