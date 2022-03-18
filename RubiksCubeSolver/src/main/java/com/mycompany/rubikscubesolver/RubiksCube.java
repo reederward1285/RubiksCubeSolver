@@ -2,7 +2,7 @@ package com.mycompany.rubikscubesolver;
 import java.util.Scanner;
 
 /*
- * @author Daniel, Reeder, Johannes, Ömer
+ * @author Daniel, Johannes, Ömer
  */
 public class RubiksCube {
     // arrays start counting from zero
@@ -17,7 +17,7 @@ public class RubiksCube {
                         'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
                         'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',
                       };
-        
+      
         System.out.println(cube); // this shows cube before move
         cube = AdjacentEdgeSwap(cube); // do the move
         System.out.println(cube); // this shows cube after move
@@ -64,7 +64,7 @@ public class RubiksCube {
         cube = U(cube);
     }
     
-     // U
+    // U
     public static char[] U(char[] cube)
     {
         // change the letters to be in the right spots
@@ -421,7 +421,7 @@ public class RubiksCube {
     }
     
     // L
-     public static char[] L(char[] cube)
+    public static char[] L(char[] cube)
     {
        // change the letters to be in the right spots
         char cube9 = cube[9];
@@ -1130,5 +1130,5 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         return cube;
-    }   
+    }
 }
