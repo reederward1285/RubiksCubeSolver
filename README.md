@@ -42,7 +42,7 @@ F2L:
 OLL:
 
     1. Step (edges): 1 dot case + 1 finished cross + 2 line cases + 4 L cases = 8 cases
-    2. Step (corners): T-case + H-case + U-case + L-case + Pi-case + Sune-case + Antisune-case * 4 Orientations = 28 cases
+    2. Step (corners): 2 H-cases + (T-case + U-case + L-case + Pi-case + Sune-case + Antisune-case) * 4 Orientations = 26 cases
 
 PLL:
 
