@@ -1,5 +1,6 @@
 package com.mycompany.rubikscubesolver;
 
+import java.util.Scanner;
 /*
  * @author Daniel, Johannes, Ömer
  */
@@ -16,10 +17,69 @@ public class RubiksCube {
                         'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
                         'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',
                       };
-      
-        System.out.println(cube); // this shows cube before move
-        cube = AdjacentEdgeSwap(cube); // do the move
-        System.out.println(cube); // this shows cube after move
+
+        int w_counter = 0;
+        int o_counter = 0;
+        int g_counter = 0;
+        int r_counter = 0;
+        int y_counter = 0;
+        int b_counter = 0;
+        final int MAX_COLOR = 9;
+
+        System.out.println("RUBIK'S CUBE SOLVER");
+        System.out.println("");
+        System.out.println("Add your colors");
+        Scanner eingabe = new Scanner(System.in);
+    
+        for (int whichSpot = 0; whichSpot <= 53; whichSpot++)
+        {
+            System.out.println("Give " + whichSpot + ": ");
+            //bool is_value_set = false;
+            // while is_value_set != false
+            char user_color = eingabe.next().charAt(0);
+
+            if (user_color == 'W' && w_counter <9)
+            {
+                cube[whichSpot] = user_color;
+                w_counter++;
+            }
+            else if (user_color == 'O' && o_counter <9)
+            {
+                System.out.println("Value has been set");
+                cube[whichSpot] = user_color;
+                o_counter++;
+            }
+            else if (user_color == 'G' && g_counter <9)
+            {
+                System.out.println("Value has been set");
+                cube[whichSpot] = user_color;
+                g_counter++;
+            }
+            else if (user_color == 'R' && r_counter <9)
+            {
+                System.out.println("Value has been set");
+                cube[whichSpot] = user_color;
+                r_counter++;
+            }
+            else if (user_color == 'Y' && y_counter <9)
+            {
+                System.out.println("Value has been set");
+                cube[whichSpot] = user_color;
+                y_counter++;
+            }
+            else if (user_color == 'B' && b_counter <9)
+            {
+                System.out.println("Value has been set");
+                cube[whichSpot] = user_color;
+                b_counter++;
+            }        
+            else
+            {
+                System.out.println("");
+                System.out.println("Color maximum used");
+                System.out.println("Value hasn't been set");
+            }        
+        }
     }
     
     public static char[] AdjacentEdgeSwap(char[] cube)
@@ -598,7 +658,7 @@ public class RubiksCube {
     }
     
     // D
-    public static char[] D(char[] cube)       
+    public static char[] D(char[] cube)
     {
         // change the letters to be in the right spots
         char cube15 = cube[15];
