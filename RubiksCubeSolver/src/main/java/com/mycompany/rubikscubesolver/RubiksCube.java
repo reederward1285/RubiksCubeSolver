@@ -10,99 +10,17 @@ public class RubiksCube {
     // cube[5] is spot number 6
     public static void main(String[] arguments)
     {
-        char[] cube = { 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W',
+        char[] cube = { 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 
                         'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
                         'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G',
-                        'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
-                        'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
-                        'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',
+                        'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 
+                        'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 
+                        'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 
                       };
         
-        String printCube = new String(cube);
-
-        int w_counter = 0;
-        int o_counter = 0;
-        int g_counter = 0;
-        int r_counter = 0;
-        int y_counter = 0;
-        int b_counter = 0;
-        final int MAX_COLOR = 9;
-        int cubeLength = cube.length;
-
-        System.out.println("RUBIK'S CUBE SOLVER");
-        System.out.println("");
-        System.out.println("Add your colors");
-        Scanner eingabe = new Scanner(System.in);
-    
-        for (int whichSpot = 0; whichSpot < cubeLength; whichSpot++)
-        {
-            System.out.println("Give " + whichSpot + ": ");
-            //bool is_value_set = false;
-            // while is_value_set != false
-            char user_color = eingabe.next().charAt(0);
-
-            if (user_color == 'W' && w_counter <9)
-            {
-                cube[whichSpot] = user_color;
-                w_counter++;
-            }
-            else if (user_color == 'O' && o_counter < MAX_COLOR)
-            {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                o_counter++;
-            }
-            else if (user_color == 'G' && g_counter < MAX_COLOR)
-            {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                g_counter++;
-            }
-            else if (user_color == 'R' && r_counter < MAX_COLOR)
-            {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                r_counter++;
-            }
-            else if (user_color == 'Y' && y_counter < MAX_COLOR)
-            {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                y_counter++;
-            }
-            else if (user_color == 'B' && b_counter < MAX_COLOR)
-            {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                b_counter++;
-            }
-            else
-            {
-                System.out.println();
-                
-                if (user_color == 'B' ||
-                    user_color == 'Y' ||
-                    user_color == 'R' ||
-                    user_color == 'W' ||
-                    user_color == 'G' ||
-                    user_color == 'O')
-                {
-                    System.out.println("Color maximum used. Please re-try.");
-                }
-                else
-                {            
-                    System.out.println("Value hasn't been set. Not a valid color.");
-                }
-                
-                System.out.println();
-                whichSpot--;
-            }        
-        }
-        
-        System.out.println("Here is the cube un-scrambled:");
-        System.out.println(printCube);
-        System.out.println("Here is the scrambled cube:");
-        System.out.println(cube);
+        System.out.println(cube); // this shows cube before move
+        cube = Turns(cube); // do the move
+        System.out.println(cube); // this shows cube after move
     }
     
     public static char[] AdjacentEdgeSwap(char[] cube)
@@ -130,21 +48,26 @@ public class RubiksCube {
         cube = L(cube);
         cube = L(cube);
         cube = U(cube);
-
-        return cube;
+        
+        return cube; 
     }
     
     public static char[] Turns(char[] cube)
     {
         cube = Fp(cube);
+        cube = Fp(cube);
         cube = R(cube);
-        cube = Up(cube);
-        cube = L(cube);
+        cube = Lp(cube);
+        cube = B(cube);
         cube = D(cube);
-        cube = Bp(cube);
         cube = Rp(cube);
+        cube = Up(cube);
+        cube = F(cube);
+        cube = L(cube);
         cube = U(cube);
-        
+        cube = Bp(cube);
+        cube = Dp(cube);
+    
         return cube;
     }
     
@@ -505,7 +428,7 @@ public class RubiksCube {
     }
     
     // L
-    public static char[] L(char[] cube)
+     public static char[] L(char[] cube)
     {
        // change the letters to be in the right spots
         char cube9 = cube[9];
@@ -553,7 +476,7 @@ public class RubiksCube {
         // spot number 24 is changing to be the Farbe in spot 20
         cube[48] = cube39;
 
-        // spot number 25 is changing to be the Farbe in spot 27 hier
+        // spot number 25 is changing to be the Farbe in spot 27 
         cube[51] = cube42;
 
         // spot number 26 is changing to be the Farbe in spot 24
@@ -619,7 +542,7 @@ public class RubiksCube {
         char cube51 = cube[51];
         
         // spot number 1 is changing to be the Farbe in spot 19
-        cube[0] = cube18;
+           cube[0] = cube18;
 
         // spot number 4 is changing to be the Farbe in spot 22
         cube[3] = cube21;
@@ -683,7 +606,7 @@ public class RubiksCube {
     }
     
     // D
-    public static char[] D(char[] cube)
+    public static char[] D(char[] cube)       
     {
         // change the letters to be in the right spots
         char cube15 = cube[15];
@@ -735,13 +658,13 @@ public class RubiksCube {
         cube[35] = cube26;
 
         // spot number 46 is changing to be the Farbe in spot 34
-        cube[45] = cube33;
+        cube[45] = cube35;
 
         // spot number 47 is changing to be the Farbe in spot 35
         cube[46] = cube34;
 
         // spot number 48 is changing to be the Farbe in spot 36
-        cube[47] = cube35;
+        cube[47] = cube33;
         
         // spot number 37 is changing to be the Farbe in spot 43
         cube[36] = cube42;
@@ -824,13 +747,13 @@ public class RubiksCube {
         cube[35] = cube45;
 
         // spot number 46 is changing to be the Farbe in spot 16
-        cube[45] = cube15;
+        cube[45] = cube17;
 
         // spot number 47 is changing to be the Farbe in spot 17
         cube[46] = cube16;
 
         // spot number 48 is changing to be the Farbe in spot 18
-        cube[47] = cube17;
+        cube[47] = cube15;
         
         // spot number 37 is changing to be the Farbe in spot 39
         cube[36] = cube38;
@@ -1099,29 +1022,29 @@ public class RubiksCube {
         // spot number 45 is changing to be the Farbe in spot 16
         cube[44] = cube15;
         
-        // spot number 46 is changing to be the Farbe in spot 48
-        cube[45] = cube47;
+        // spot number 46 is changing to be the Farbe in spot 52
+        cube[45] = cube51;
 
-        // spot number 47 is changing to be the Farbe in spot 51
-        cube[46] = cube50;
+        // spot number 47 is changing to be the Farbe in spot 49
+        cube[46] = cube48;
 
-        // spot number 48 is changing to be the Farbe in spot 54
-        cube[47] = cube53;
+        // spot number 48 is changing to be the Farbe in spot 46
+        cube[47] = cube45;
 
-        // spot number 49 is changing to be the Farbe in spot 47
-        cube[48] = cube46;
+        // spot number 49 is changing to be the Farbe in spot 53
+        cube[48] = cube52;
 
-        // spot number 51 is changing to be the Farbe in spot 53
-        cube[50] = cube52;
+        // spot number 51 is changing to be the Farbe in spot 47
+        cube[50] = cube46;
 
-        // spot number 52 is changing to be the Farbe in spot 46
-        cube[51] = cube45;
+        // spot number 52 is changing to be the Farbe in spot 54
+        cube[51] = cube53;
 
-        // spot number 53 is changing to be the Farbe in spot 49
-        cube[52] = cube48;
+        // spot number 53 is changing to be the Farbe in spot 51
+        cube[52] = cube50;
 
-        // spot number 54 is changing to be the Farbe in spot 52
-        cube[53] = cube51;
+        // spot number 54 is changing to be the Farbe in spot 48
+        cube[53] = cube47;
 
         // return the new array with the correct spots
         return cube;
@@ -1179,40 +1102,40 @@ public class RubiksCube {
         // spot number 36 is changing to be the Farbe in spot 3
         cube[35] = cube2;
 
-        // spot number 43 is changing to be the Farbe in spot 30
-        cube[42] = cube29;
+        // spot number 43 is changing to be the Farbe in spot 36
+        cube[42] = cube35;
 
         // spot number 44 is changing to be the Farbe in spot 33
         cube[43] = cube32;
 
-        // spot number 45 is changing to be the Farbe in spot 36
-        cube[44] = cube35;
+        // spot number 45 is changing to be the Farbe in spot 30
+        cube[44] = cube29;
         
-        // spot number 46 is changing to be the Farbe in spot 52
-        cube[45] = cube51;
+        // spot number 46 is changing to be the Farbe in spot 48
+        cube[45] = cube47;
 
-        // spot number 47 is changing to be the Farbe in spot 49
-        cube[46] = cube48;
+        // spot number 47 is changing to be the Farbe in spot 51
+        cube[46] = cube50;
 
-        // spot number 48 is changing to be the Farbe in spot 46
-        cube[47] = cube45;
+        // spot number 48 is changing to be the Farbe in spot 54
+        cube[47] = cube53;
 
-        // spot number 49 is changing to be the Farbe in spot 53
-        cube[48] = cube52;
+        // spot number 49 is changing to be the Farbe in spot 47
+        cube[48] = cube46;
 
-        // spot number 51 is changing to be the Farbe in spot 47
-        cube[50] = cube46;
+        // spot number 51 is changing to be the Farbe in spot 53
+        cube[50] = cube52;
 
-        // spot number 52 is changing to be the Farbe in spot 54
-        cube[51] = cube53;
+        // spot number 52 is changing to be the Farbe in spot 46
+        cube[51] = cube45;
 
-        // spot number 53 is changing to be the Farbe in spot 51
-        cube[52] = cube50;
+        // spot number 53 is changing to be the Farbe in spot 49
+        cube[52] = cube48;
 
-        // spot number 54 is changing to be the Farbe in spot 48
-        cube[53] = cube47;
-
+        // spot number 54 is changing to be the Farbe in spot 52
+        cube[53] = cube51;
+       
         // return the new array with the correct spots
         return cube;
-    }
+    }   
 }
