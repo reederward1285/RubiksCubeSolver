@@ -105,6 +105,250 @@ public class RubiksCube {
         System.out.println(cube);
     }
     
+    
+    
+    
+    //White Cross (8-20)
+    if (cube[7] == cube[7] && cube[19] == cube[19])
+        // case 1 - 8-20 : 8-20
+        {
+        // do the moves here
+        }
+        else if (cube[7] == cube[5] && cube[19] == cube[28])
+        // case 2 - 6-29 : 8-20
+        {
+            R(char[] cube);
+            R_Move(cube);
+            D_Prime_Move(cube);
+            F_Move(cube);
+            F_Move(cube);
+            // do the moves here
+        }
+        else if (cube[7] == cube[1] && cube[19] == cube[52])
+        // case 3 - 2-53 : 8-20
+        {
+            B_Move(cube);
+            B_Move(cube);
+            D_Move(cube);
+            D_Move(cube);
+            F_Move(cube);
+            F_Move(cube); 
+        }
+        else if (cube[7] == cube[3] && cube[19] == cube[10])
+        // case 4 - 4-11 : 8-20
+        {
+            L_Move(cube);
+            L_Move(cube);
+            D_Move(cube);
+            L_Move(cube);
+            L_Move(cube);
+            F_Move(cube); 
+            F_Move(cube);
+        }
+        else if (cube[7] == cube[23] && cube[19] == cube[30])
+        // case 5 - 24-31 : 8-20
+        {
+            R_Prime_Move(cube);
+            D_Prime_Move(cube);
+            R_Move(cube);
+            F_Move(cube);
+            F_Move(cube); 
+        }
+        else if (cube[7] == cube[25] && cube[19] == cube[37])
+        // case 6 - 26-38 : 8-20
+        {
+            R_Move(cube);
+            L_Prime_Move(cube);
+            F_Move(cube);
+            R_Prime_Move(cube);
+            L_Move(cube); 
+        }
+        else if (cube[7] == cube[21] && cube[19] == cube[14])
+        // case 7 - 22-15 : 8-20
+        {
+            L_Move(cube);
+            D_Move(cube);
+            L_Prime_Move(cube);
+            F_Move(cube);
+            F_Move(cube); 
+        }
+        else if (cube[7] == cube[41] && cube[19] == cube[34])
+        // case 8 - 42-35 : 8-20
+        {
+            D_Prime_Move(cube);
+            F_Move(cube);
+            F_Move(cube); 
+        }
+        else if (cube[7] == cube[43] && cube[19] == cube[46])
+        // case 9 - 44-47 : 8-20
+        {
+            D_Move(cube);
+            D_Move(cube);
+            F_Move(cube);
+            F_Move(cube); 
+        }
+        else if (cube[7] == cube[39] && cube[19] == cube[16])
+        // case 10 - 40-17 : 8-20
+        {
+            D_Move(cube);
+            F_Move(cube);
+            F_Move(cube); 
+        }
+        else if (cube[7] == cube[50] && cube[19] == cube[32])
+        // case 11 - 51-33 : 8-20
+        {
+            R_Move(cube);
+            D_Prime_Move(cube);
+            R_Prime_Move(cube);
+            F_Move(cube);
+            F_Move(cube); 
+        }
+        else if (cube[7] == cube[48] && cube[19] == cube[12])
+        // case 12 - 49-13 : 8-20
+        {
+            L_Prime_Move(cube);
+            D_Move(cube);
+            L_Move(cube);
+            F_Move(cube);
+            F_Move(cube); 
+        }
+        else if (cube[7] == cube[19] && cube[19] == cube[7])
+        // case 13 - 20-8 : 8-20
+        {
+            F_Move(cube);
+            U_Prime_Move(cube);
+            R_Move(cube);
+            U_Move(cube);
+        }
+        else if (cube[7] == cube[28] && cube[19] == cube[5])
+        // case 14 - 29-6 : 8-20
+        {
+            R_Prime_Move(cube);
+            F_Prime_Move(cube);
+            R_Move(cube);
+        }
+        else if (cube[7] == cube[52] && cube[19] == cube[1])
+        // case 15 - 53-2 : 8-20
+        {
+            B_Move(cube);
+            U_Prime_Move(cube);
+            R_Move(cube);
+            U_Move(cube);
+        }
+        else if (cube[7] == cube[10] && cube[19] == cube[3])
+        // case 16 - 11-4 : 8-20
+        {
+            L_Move(cube);
+            F_Move(cube);
+            L_Prime_Move(cube);
+        }
+        else if (cube[7] == cube[30] && cube[19] == cube[23])
+        // case 17 - 31-24 : 8-20
+        {
+            F_Prime_Move(cube);
+        }
+        else if (cube[7] == cube[37] && cube[19] == cube[25])
+        // case 18 - 38-26 : 8-20
+        {
+            F_Move(cube);
+            F_Move(cube);
+        }
+        else if (cube[7] == cube[14] && cube[19] == cube[21])
+            // case 19 - 15-22 : 8-20
+        {
+            F_Move(cube);
+        }
+        else if (cube[7] == cube[34] && cube[19] == cube[41])
+        // case 20 - 35-42 : 8-20
+        {
+            R_Move(cube);
+            F_Prime_Move(cube);
+            R_Prime_Move(cube);
+        }
+        else if (cube[7] == cube[46] && cube[19] == cube[41])
+        // case 21 - 47-44 : 8-20
+        {
+            D_Prime_Move(cube);
+            R_Move(cube);
+            F_Prime_Move(cube);
+            R_Prime_Move(cube);
+        }
+        else if (cube[7] == cube[16] && cube[19] == cube[39])
+        // case 22 - 17-40 : 8-20
+        {
+            L_Prime_Move(cube);
+            F_Move(cube);
+            L_Move(cube);
+        }
+        else if (cube[7] == cube[32] && cube[19] == cube[50])
+        // case 23 - 33-51 : 8-20
+        {
+            R_Move(cube);
+            R_Move(cube);
+            F_Prime_Move(cube);
+            R_Move(cube);
+            R_Move(cube);
+        }
+        else if (cube[7] == cube[12] && cube[19] == cube[48])
+        // case 24 - 13-49 : 8-20
+        {
+            L_Move(cube);
+            L_Move(cube);
+            F_Move(cube);
+            L_Move(cube);
+            L_Move(cube);
+        }  
+    
+    //White Cross (4-11)
+    if (cube[3] == cube[3] && cube[10] == cube[10])
+        // case 1 - 4-11 : 4-11
+        {
+        // do the moves here
+        }
+        else if (cube[4] == cube[] && cube[11] == cube[])
+        // case 2 - - : 4-11
+        {
+            R_Move(cube);
+            R_Move(cube);
+            D_Prime_Move(cube);
+            F_Move(cube);
+            F_Move(cube);
+            // do the moves here
+        }
+        else if (cube[4] == cube[] && cube[11] == cube[])
+        // case  - - : 4-11
+        {
+            R_Move(cube);
+            R_Move(cube);
+            D_Prime_Move(cube);
+            F_Move(cube);
+            F_Move(cube);
+            // do the moves here
+        }
+        else if (cube[4] == cube[] && cube[11] == cube[])
+        // case  - - : 4-11
+        {
+            R_Move(cube);
+            R_Move(cube);
+            D_Prime_Move(cube);
+            F_Move(cube);
+            F_Move(cube);
+            // do the moves here
+        }
+        else if (cube[4] == cube[] && cube[11] == cube[])
+            // case  - - : 4-11
+        {
+            R_Move(cube);
+            R_Move(cube);
+            D_Prime_Move(cube);
+            F_Move(cube);
+            F_Move(cube);
+            // do the moves here
+        }
+  
+    
+    
+        
     public static char[] AdjacentEdgeSwap(char[] cube)
     {
         // Rp L Fp R2 L2 Bp R2 L2 Fp Rp L D2 R2 L2 U
