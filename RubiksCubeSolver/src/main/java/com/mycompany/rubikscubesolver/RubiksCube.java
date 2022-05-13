@@ -268,7 +268,7 @@ public class RubiksCube {
 
     //White Cross (4-11)
     public static char[] WhiteCross411(char[] cube, char[] solved) {
-        if (cube[3] == cube[3] && cube[10] == cube[10]) // case 1 - 4-11 : 4-11
+        if (cube[3] == solved[3] && cube[10] == solved[10]) // case 1 - 4-11 : 4-11
         {
             // do the moves here
         } 
