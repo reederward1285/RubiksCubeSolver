@@ -454,41 +454,41 @@ public class RubiksCube {
 
     //White Cross (2-53)
     public static char[] WhiteCross253(char[] cube, char[] solved) {
-        if (cube[] == solved[] && cube[] == solved[]) // case 1 - - : -
-        {
-            // do the moves here
-        } else if (cube[] == solved[] && cube[] == solved[]) // case 2 - - : -
-        {
-            cube = (cube);
-            cube = (cube);
-            cube = (cube);
-            cube = (cube);
-            cube = (cube);
-            // do the moves here
-        }
+        // if (cube[] == solved[] && cube[] == solved[]) // case 1 - - : -
+        // {
+        //     // do the moves here
+        // } else if (cube[] == solved[] && cube[] == solved[]) // case 2 - - : -
+        // {
+        //     cube = (cube);
+        //     cube = (cube);
+        //     cube = (cube);
+        //     cube = (cube);
+        //     cube = (cube);
+        //     // do the moves here
+        // }
         return (cube);
     }
 
     //White Cross (6-29)
     public static char[] WhiteCross629(char[] cube, char[] solved) {
-        if (cube[] == solved[] && cube[] == solved[]) // case 1 - - : -
-        {
-            // do the moves here
-        } else if (cube[] == solved[] && cube[] == solved[]) // case 2 - - : -
-        {
-            cube = (cube);
-            cube = (cube);
-            cube = (cube);
-            cube = (cube);
-            cube = (cube);
-            // do the moves here
-        }
+        // if (cube[] == solved[] && cube[] == solved[]) // case 1 - - : -
+        // {
+        //     // do the moves here
+        // } else if (cube[] == solved[] && cube[] == solved[]) // case 2 - - : -
+        // {
+        //     cube = (cube);
+        //     cube = (cube);
+        //     cube = (cube);
+        //     cube = (cube);
+        //     cube = (cube);
+        //     // do the moves here
+        // }
         return (cube);
     }
 
 //F2L
     public static char[] F2L(char[] cube){
-        
+        return cube;
     }
     
 //OLL
