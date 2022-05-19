@@ -29,15 +29,13 @@ Number of Algorithms:
 
 Cross:
 
-    4 Pieces * 12 spots * 2 sides = 96 cases
+    4 pieces * 12 spots * 2 sides = 96 cases
 
 F2L:
 
-    Corners:
+    Corners:  4 pieces * 3 rotations * 8 spots = 96 cases
 
-    Edges:
-
-    F2L:
+    Edges: 4 pieces * 2 rotations * 8 spots = 64 cases
 
 OLL:
 
@@ -46,7 +44,7 @@ OLL:
 
 PLL:
 
-    1. Step (corners): 2 diagonal case + 2 headlight cases = 4 cases
+    1. Step (corners): 2 diagonal case + 4 headlight cases = 6 cases
     2. Step (edges): 1 H-PLL + 4 Ua-cases + 4 Ub-cases + 2 Z-cases = 11 cases
 
 
