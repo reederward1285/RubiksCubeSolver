@@ -10,7 +10,6 @@ public class RubiksCube {
     // arrays start counting from zero
     // so, char[] cube: cube[0] is spot number 1,
     // cube[5] is spot number 6
-    // test code right here
     public static void main(String[] arguments) {
         char[] cube = {'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W',
             'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
