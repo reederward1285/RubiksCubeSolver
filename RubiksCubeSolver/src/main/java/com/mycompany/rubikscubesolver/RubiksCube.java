@@ -683,8 +683,735 @@ public class RubiksCube {
     public static char[] F2L(char[] cube) {
         return cube;
     }
+    
+//OLL
+    //OLL (edges)
+    public static char[] OLL_edges(char[] cube, char[] solved) {
+        if (cube[39] == solved[39] && cube[37] == solved[37] && cube[41] == solved[41] && cube[43] == solved[43]) // case 1:finished cross - - : -
+        {
+            // do the moves here
+        } 
+        else if (cube[37] == solved[37] && cube[43] == solved[43]) // case 2:I-shape vertical - - : -
+        {
+            cube = D(cube);
+            cube = F(cube);
+            cube = L(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = Fp(cube);
+            cube = Dp(cube);
+        }
+        else if (cube[39] == solved[39] && cube[41] == solved[41]) // case 3:I-shape horizontal - - : -
+        {
+            cube = F(cube);
+            cube = L(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = Fp(cube);
+        }
+        else if (cube[37] == solved[37] && cube[39] == solved[39] && cube[41] != solved[41] && cube[43] != solved[43]) // case 4:L-shape left upper - - : -
+        {
+            cube = D(cube);
+            cube = D(cube);
+            cube = B(cube);
+            cube = D(cube);
+            cube = R(cube);
+            cube = Dp(cube);
+            cube = Rp(cube);
+            cube = Bp(cube);
+        }
+        else if (cube[37] == solved[37] && cube[41] == solved[41] && cube[39] != solved[39] && cube[43] != solved[43]) // case 5:L-shape right upper - - : -
+        {
+            cube = D(cube);
+            cube = B(cube);
+            cube = D(cube);
+            cube = R(cube);
+            cube = Dp(cube);
+            cube = Rp(cube);
+            cube = Bp(cube);
+        }
+        else if (cube[39] == solved[39] && cube[43] == solved[43] && cube[37] != solved[37] && cube[41] != solved[41]) // case 6:L-shape left lower - - : -
+        {
+            cube = Dp(cube);
+            cube = B(cube);
+            cube = D(cube);
+            cube = R(cube);
+            cube = Dp(cube);
+            cube = Rp(cube);
+            cube = Bp(cube);
+        }
+        else if (cube[41] == solved[41] && cube[43] == solved[43] && cube[39] != solved[39] && cube[37] != solved[37]) // case 7:L-shape right lower - - : -
+        {
+            cube = B(cube);
+            cube = D(cube);
+            cube = R(cube);
+            cube = Dp(cube);
+            cube = Rp(cube);
+            cube = Bp(cube);
+        }
+        else if (cube[25] != solved[25] && cube[34] != solved[34] && cube[46] != solved[46] && cube[16] != solved[16]) // case 8:dot shape - - : -
+        {
+            cube = F(cube);
+            cube = L(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = Fp(cube);
+            cube = B(cube);
+            cube = D(cube);
+            cube = R(cube);
+            cube = Dp(cube);
+            cube = Rp(cube);
+            cube = Bp(cube);
+        }
+        return (cube);
+    }
+
+    //OLL (corners)
+    public static char[] OLL_corners(char[] cube, char[] solved) {
+        if (cube[36] == solved[36] && cube[38] == solved[38] && cube[42] == solved[42] && cube[44] == solved[44]) // case 1:finished cross - - : -
+        {
+            // do the moves here
+        } 
+        else if (cube[42] == solved[40] && cube[47] == solved[40] && cube[33] == solved[40] && cube[24] == solved[40]) // case 2:sune left upper - - : -
+        {
+            cube = D(cube);
+            cube = D(cube);
+            cube = L(cube);
+            cube = Dp(cube);
+            cube = Rp(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = R(cube);
+        }
+        else if (cube[44] == solved[40] && cube[33] == solved[40] && cube[24] == solved[40] && cube[15] == solved[40]) // case 3:sune left lower - - : -
+        {
+            cube = Dp(cube);
+            cube = L(cube);
+            cube = Dp(cube);
+            cube = Rp(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = R(cube);
+        }
+        else if (cube[36] == solved[40] && cube[15] == solved[40] && cube[47] == solved[40] && cube[33] == solved[40]) // case 4:sune right upper - - : -
+        {
+            cube = D(cube);
+            cube = L(cube);
+            cube = Dp(cube);
+            cube = Rp(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = R(cube);
+        }
+        else if (cube[38] == solved[40] && cube[24] == solved[40] && cube[15] == solved[40] && cube[47] == solved[40]) // case 5:sune right lower - - : -
+        {
+            cube = L(cube);
+            cube = Dp(cube);
+            cube = Rp(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+        }
+        else if (cube[15] == solved[40] && cube[17] == solved[40] && cube[33] == solved[40] && cube[35] == solved[40]) // case 6:H-shape horizontal - - : -
+        {
+            cube = D(cube);
+            cube = F(cube);
+            cube = L(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = L(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = L(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = Fp(cube);
+        }
+        else if (cube[24] == solved[40] && cube[26] == solved[40] && cube[45] == solved[40] && cube[47] == solved[40]) // case 7:H-shape vertical - - : -
+        {
+            cube = F(cube);
+            cube = L(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = L(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = L(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = Fp(cube);
+        }
+        else if (cube[33] == solved[40] && cube[45] == solved[40]) // case 8:L left upper - - : -
+        {
+            cube = Dp(cube);
+            cube = Dp(cube);
+            cube = Lp(cube);
+            cube = F(cube);
+            cube = L(cube);
+            cube = Bp(cube);
+            cube = Lp(cube);
+            cube = Fp(cube);
+            cube = L(cube);
+            cube = B(cube);
+        }
+        else if (cube[24] == solved[40] && cube[35] == solved[40]) // case 9:L left lower - - : -
+        {
+            cube = Fp(cube);
+            cube = R(cube);
+            cube = F(cube);
+            cube = Lp(cube);
+            cube = Fp(cube);
+            cube = Rp(cube);
+            cube = F(cube);
+            cube = L(cube);
+        }
+        else if (cube[17] == solved[40] && cube[47] == solved[40]) // case 10:L right upper - - : -
+        {
+            cube = Bp(cube);
+            cube = L(cube);
+            cube = B(cube);
+            cube = Rp(cube);
+            cube = Bp(cube);
+            cube = Lp(cube);
+            cube = B(cube);
+            cube = R(cube);
+        }
+        else if (cube[15] == solved[40] && cube[26] == solved[40]) // case 11:L right lower - - : -
+        {
+            cube = Lp(cube);
+            cube = F(cube);
+            cube = L(cube);
+            cube = Bp(cube);
+            cube = Lp(cube);
+            cube = Fp(cube);
+            cube = L(cube);
+            cube = B(cube);
+        }
+        else if (cube[33] == solved[40] && cube[35] == solved[40] && cube[24] == solved[40] && cube[45] == solved[40]) // case 12:Pi left - - : -
+        {
+            cube = L(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = L(cube);
+            cube = L(cube);
+            cube = Dp(cube);
+            cube = L(cube);
+            cube = L(cube);
+            cube = Dp(cube);
+            cube = L(cube);
+            cube = L(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = L(cube);
+        }
+        else if (cube[17] == solved[40] && cube[33] == solved[40] && cube[45] == solved[40] && cube[47] == solved[40]) // case 13:Pi back - - : -
+        {
+            cube = F(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = F(cube);
+            cube = F(cube);
+            cube = Dp(cube);
+            cube = F(cube);
+            cube = F(cube);
+            cube = Dp(cube);
+            cube = F(cube);
+            cube = F(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = F(cube);
+        }
+        else if (cube[15] == solved[40] && cube[17] == solved[40] && cube[26] == solved[40] && cube[47] == solved[40]) // case 14:Pi right - - : -
+        {
+            cube = R(cube);
+            cube = U(cube);
+            cube = U(cube);
+            cube = R(cube);
+            cube = R(cube);
+            cube = Up(cube);
+            cube = R(cube);
+            cube = R(cube);
+            cube = Up(cube);
+            cube = R(cube);
+            cube = R(cube);
+            cube = U(cube);
+            cube = U(cube);
+            cube = R(cube);
+            cube = F(cube);
+            cube = F(cube);
+        }
+        else if (cube[24] == solved[40] && cube[26] == solved[40] && cube[15] == solved[40] && cube[35] == solved[40]) // case 15:Pi front - - : -
+        {
+            cube = R(cube);
+            cube = U(cube);
+            cube = U(cube);
+            cube = R(cube);
+            cube = R(cube);
+            cube = Up(cube);
+            cube = R(cube);
+            cube = R(cube);
+            cube = Up(cube);
+            cube = R(cube);
+            cube = R(cube);
+            cube = U(cube);
+            cube = U(cube);
+            cube = R(cube);
+            cube = F(cube);
+        }
+        else if (cube[38] == solved[40] && cube[17] == solved[40] && cube[35] == solved[40] && cube[45] == solved[40]) // case 16:antisune left upper - - : -
+        {
+            cube = R(cube);
+            cube = U(cube);
+            cube = U(cube);
+            cube = Rp(cube);
+            cube = Up(cube);
+            cube = R(cube);
+            cube = Up(cube);
+            cube = Rp(cube);
+            cube = Fp(cube);
+        }
+        else if (cube[36] == solved[40] && cube[26] == solved[40] && cube[35] == solved[40] && cube[45] == solved[40]) // case 17:anitsune left lower - - : -
+        {
+            cube = R(cube);
+            cube = U(cube);
+            cube = U(cube);
+            cube = Rp(cube);
+            cube = Up(cube);
+            cube = R(cube);
+            cube = Up(cube);
+            cube = Rp(cube);
+            cube = F(cube);
+            cube = F(cube);
+        }
+        else if (cube[44] == solved[40] && cube[17] == solved[40] && cube[26] == solved[40] && cube[45] == solved[40]) // case 18:antisune right upper - - : -
+        {
+            cube = R(cube);
+            cube = U(cube);
+            cube = U(cube);
+            cube = Rp(cube);
+            cube = Up(cube);
+            cube = R(cube);
+            cube = Up(cube);
+            cube = Rp(cube);
+        }
+        else if (cube[42] == solved[40] && cube[17] == solved[40] && cube[26] == solved[40] && cube[35] == solved[40]) // case 19:antisune right lower - - : -
+        {
+            cube = R(cube);
+            cube = U(cube);
+            cube = U(cube);
+            cube = Rp(cube);
+            cube = Up(cube);
+            cube = R(cube);
+            cube = Up(cube);
+            cube = Rp(cube);
+            cube = F(cube);
+        }
+        else if (cube[26] == solved[40] && cube[47] == solved[40] && cube[36] == solved[40] && cube[42] == solved[40]) // case 20:T left  - - : -
+        {
+            cube = R(cube);
+            cube = U(cube);
+            cube = Rp(cube);
+            cube = Up(cube);
+            cube = Rp(cube);
+            cube = F(cube);
+            cube = R(cube);
+            cube = Fp(cube);
+        }
+        else if (cube[24] == solved[40] && cube[45] == solved[40] && cube[38] == solved[40] && cube[44] == solved[40]) // case 21:T right - - : -
+        {
+            cube = R(cube);
+            cube = U(cube);
+            cube = Rp(cube);
+            cube = Up(cube);
+            cube = Rp(cube);
+            cube = F(cube);
+            cube = R(cube);
+            cube = Fp(cube);
+            cube = F(cube);
+            cube = F(cube);
+        }
+        else if (cube[17] == solved[40] && cube[33] == solved[40] && cube[42] == solved[40] && cube[44] == solved[40]) // case 22:T front - - : -
+        {
+            cube = R(cube);
+            cube = U(cube);
+            cube = Rp(cube);
+            cube = Up(cube);
+            cube = Rp(cube);
+            cube = F(cube);
+            cube = R(cube);
+            cube = Fp(cube);
+            cube = F(cube);
+        }
+        else if (cube[15] == solved[40] && cube[35] == solved[40] && cube[36] == solved[40] && cube[38] == solved[40]) // case 23:T back - - : -
+        {
+            cube = R(cube);
+            cube = U(cube);
+            cube = Rp(cube);
+            cube = Up(cube);
+            cube = Rp(cube);
+            cube = F(cube);
+            cube = R(cube);
+            cube = Fp(cube);
+            cube = Fp(cube);
+        }
+        else if (cube[33] == solved[40] && cube[35] == solved[40] && cube[36] == solved[40] && cube[42] == solved[40]) // case 24:U left - - : -
+        {
+            cube = Dp(cube);
+            cube = L(cube);
+            cube = L(cube);
+            cube = U(cube);
+            cube = Lp(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = L(cube);
+            cube = Up(cube);
+            cube = Lp(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+        }
+        else if (cube[15] == solved[40] && cube[17] == solved[40] && cube[38] == solved[40] && cube[44] == solved[40]) // case 25:U right - - : -
+        {
+            cube = D(cube);
+            cube = L(cube);
+            cube = L(cube);
+            cube = U(cube);
+            cube = Lp(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = L(cube);
+            cube = Up(cube);
+            cube = Lp(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+        }
+        else if (cube[24] == solved[40] && cube[26] == solved[40] && cube[42] == solved[40] && cube[44] == solved[40]) // case 26:U front - - : -
+        {
+            cube = L(cube);
+            cube = L(cube);
+            cube = U(cube);
+            cube = Lp(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = L(cube);
+            cube = Up(cube);
+            cube = Lp(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+        }
+        else if (cube[45] == solved[40] && cube[47] == solved[40] && cube[36] == solved[40] && cube[38] == solved[40]) // case 27:U back - - : -
+        {
+            cube = D(cube);
+            cube = D(cube);
+            cube = L(cube);
+            cube = L(cube);
+            cube = U(cube);
+            cube = Lp(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = L(cube);
+            cube = Up(cube);
+            cube = Lp(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = Lp(cube);
+        }
+        return (cube);
+    }
+
+    //White Cross (2-53)
+    public static char[] WhiteCross253(char[] cube, char[] solved) {
+
+        if (cube[1] == solved[7] && cube[52] == solved[19]) // case 49 - 8-20 : 2-53
+        {
+            cube = F(cube);
+            cube = F(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = B(cube);
+            cube = B(cube);
+        } else if (cube[1] == solved[5] && cube[52] == solved[28]) // case 50 - 6-29 : 2-53
+        {
+            cube = R(cube);
+            cube = R(cube);
+            cube = D(cube);
+            cube = B(cube);
+            cube = B(cube);
+        } else if (cube[1] == solved[1] && cube[52] == solved[52]) // case 51 - 2-53 : 2-53
+        {
+            //- 
+        } else if (cube[1] == solved[3] && cube[52] == solved[10]) // case 52 - 4-11 : 2-53
+        {
+            cube = L(cube);
+            cube = L(cube);
+            cube = Dp(cube);
+            cube = B(cube);
+            cube = B(cube);
+        } else if (cube[1] == solved[23] && cube[52] == solved[30]) // case 53 - 24-31 : 2-53
+        {
+            cube = Rp(cube);
+            cube = D(cube);
+            cube = R(cube);
+            cube = B(cube);
+            cube = B(cube);
+        } else if (cube[1] == solved[25] && cube[52] == solved[37]) // case 54 - 26-38 : 2-53
+        {
+            cube = D(cube);
+            cube = Rp(cube);
+            cube = B(cube);
+            cube = R(cube);
+        } else if (cube[1] == solved[21] && cube[52] == solved[14]) // case 55 - 22-15 : 2-53
+        {
+            cube = Up(cube);
+            cube = Lp(cube);
+            cube = U(cube);
+        } else if (cube[1] == solved[41] && cube[52] == solved[34]) // case 56 - 42-35 : 2-53
+        {
+            cube = D(cube);
+            cube = B(cube);
+            cube = B(cube);
+        } else if (cube[1] == solved[43] && cube[52] == solved[46]) // case 57 - 44-47 : 2-53
+        {
+            cube = B(cube);
+            cube = B(cube);
+        } else if (cube[1] == solved[39] && cube[52] == solved[16]) // case 58 - 40-17 : 2-53
+        {
+            cube = Dp(cube);
+            cube = B(cube);
+            cube = B(cube);
+        } else if (cube[1] == solved[50] && cube[52] == solved[32]) // case 59 - 51-33 : 2-53
+        {
+            cube = Up(cube);
+            cube = Rp(cube);
+            cube = U(cube);
+        } else if (cube[1] == solved[48] && cube[52] == solved[12]) // case 60 - 49-13 : 2-53
+        {
+            cube = Up(cube);
+            cube = L(cube);
+            cube = U(cube);
+        } else if (cube[1] == solved[19] && cube[52] == solved[7]) // case 61 - 20-8 : 2-53
+        {
+            cube = F(cube);
+            cube = U(cube);
+            cube = R(cube);
+            cube = Up(cube);
+        } else if (cube[1] == solved[28] && cube[52] == solved[5]) // case 62 - 29-6 : 2-53
+        {
+            cube = R(cube);
+            cube = B(cube);
+        } else if (cube[1] == solved[52] && cube[52] == solved[1]) // case 63 - 53-2 : 2-53
+        {
+            cube = Bp(cube);
+            cube = Up(cube);
+            cube = Rp(cube);
+            cube = U(cube);
+        } else if (cube[1] == solved[10] && cube[52] == solved[3]) // case 64 - 11-4 : 2-53
+        {
+            cube = Lp(cube);
+            cube = Bp(cube);
+        } else if (cube[1] == solved[30] && cube[52] == solved[23]) // case 65 - 31-24 : 2-53
+        {
+            cube = U(cube);
+            cube = U(cube);
+            cube = Fp(cube);
+            cube = U(cube);
+            cube = U(cube);
+        } else if (cube[1] == solved[37] && cube[52] == solved[25]) // case 66 - 38-26 : 2-53
+        {
+            cube = U(cube);
+            cube = U(cube);
+            cube = F(cube);
+            cube = F(cube);
+            cube = U(cube);
+            cube = U(cube);
+        } else if (cube[1] == solved[14] && cube[52] == solved[21]) // case 67 - 15-22 : 2-53
+        {
+            cube = U(cube);
+            cube = U(cube);
+            cube = F(cube);
+            cube = U(cube);
+            cube = U(cube);
+        } else if (cube[1] == solved[34] && cube[52] == solved[41]) // case 68 - 35-42 : 2-53
+        {
+            cube = Rp(cube);
+            cube = B(cube);
+            cube = R(cube);
+        } else if (cube[1] == solved[46] && cube[52] == solved[41]) // case 69 - 47-44 : 2-53
+        {
+            cube = B(cube);
+            cube = U(cube);
+            cube = Rp(cube);
+            cube = Up(cube);
+        } else if (cube[1] == solved[16] && cube[52] == solved[39]) // case 70 - 17-40 : 2-53
+        {
+            cube = U(cube);
+            cube = L(cube);
+            cube = Up(cube);
+            cube = Bp(cube);
+        } else if (cube[1] == solved[32] && cube[52] == solved[50]) // case 71 - 33-51 : 2-53
+        {
+            cube = B(cube);
+        } else if (cube[1] == solved[12] && cube[52] == solved[48]) // case 72 - 13-49 : 2-53
+        {
+            cube = Bp(cube);
+        }
+
+        return (cube);
+    }
+
+    //White Cross (6-29)
+    public static char[] WhiteCross629(char[] cube, char[] solved) {
+
+        if (cube[5] == solved[7] && cube[28] == solved[19]) // case 73 - 8-20 : 6-29
+        {
+            cube = Up(cube);
+            cube = Rp(cube);
+            cube = U(cube);
+            cube = R(cube);
+        } else if (cube[5] == solved[5] && cube[28] == solved[28]) // case 74 - 6-29 : 6-29
+        {
+            //-
+        } else if (cube[5] == solved[1] && cube[28] == solved[52]) // case 75 - 2-53 : 6-29
+        {
+            cube = U(cube);
+            cube = Rp(cube);
+            cube = Up(cube);
+            cube = R(cube);
+        } else if (cube[5] == solved[3] && cube[28] == solved[10]) // case 76 - 4-11 : 6-29
+        {
+            cube = U(cube);
+            cube = U(cube);
+            cube = Rp(cube);
+            cube = U(cube);
+            cube = U(cube);
+            cube = R(cube);
+        } else if (cube[5] == solved[23] && cube[28] == solved[30]) // case 77 - 24-31 : 6-29
+        {
+            cube = R(cube);
+        } else if (cube[5] == solved[25] && cube[28] == solved[37]) // case 78 - 26-38 : 6-29
+        {
+            cube = Fp(cube);
+            cube = R(cube);
+            cube = F(cube);
+        } else if (cube[5] == solved[21] && cube[28] == solved[14]) // case 79 - 22-15 : 6-29
+        {
+            cube = U(cube);
+            cube = U(cube);
+            cube = Lp(cube);
+            cube = U(cube);
+            cube = U(cube);
+        } else if (cube[5] == solved[41] && cube[28] == solved[34]) // case 80 - 42-35 : 6-29
+        {
+            cube = R(cube);
+            cube = R(cube);
+        } else if (cube[5] == solved[43] && cube[28] == solved[46]) // case 81 - 44-47 : 6-29
+        {
+            cube = B(cube);
+            cube = B(cube);
+            cube = U(cube);
+        } else if (cube[5] == solved[39] && cube[28] == solved[16]) // case 82 - 40-17 : 6-29
+        {
+            cube = L(cube);
+            cube = L(cube);
+            cube = U(cube);
+            cube = U(cube);
+        } else if (cube[5] == solved[50] && cube[28] == solved[32]) // case 83 - 51-33 : 6-29
+        {
+            cube = Rp(cube);
+        } else if (cube[5] == solved[48] && cube[28] == solved[12]) // case 84 - 49-13 : 6-29
+        {
+            cube = L(cube);
+            cube = U(cube);
+            cube = U(cube);
+        } else if (cube[5] == solved[19] && cube[28] == solved[7]) // case 85 - 20-8 : 6-29
+        {
+            cube = Fp(cube);
+            cube = R(cube);
+        } else if (cube[5] == solved[28] && cube[28] == solved[5]) // case 86 - 29-6 : 6-29
+        {
+            cube = U(cube);
+            cube = Fp(cube);
+            cube = Up(cube);
+            cube = R(cube);
+        } else if (cube[5] == solved[52] && cube[28] == solved[1]) // case 87 - 53-2 : 6-29
+        {
+            cube = Bp(cube);
+            cube = Rp(cube);
+        } else if (cube[5] == solved[10] && cube[28] == solved[3]) // case 88 - 11-4 : 6-29
+        {
+            cube = L(cube);
+            cube = U(cube);
+            cube = F(cube);
+            cube = Up(cube);
+        } else if (cube[5] == solved[30] && cube[28] == solved[23]) // case 89 - 31-24 : 6-29
+        {
+            cube = U(cube);
+            cube = Fp(cube);
+            cube = Up(cube);
+        } else if (cube[5] == solved[37] && cube[28] == solved[25]) // case 90 - 38-26 : 6-29
+        {
+            cube = U(cube);
+            cube = F(cube);
+            cube = F(cube);
+            cube = Up(cube);
+        } else if (cube[5] == solved[14] && cube[28] == solved[21]) // case 91 - 15-22 : 6-29
+        {
+            cube = U(cube);
+            cube = F(cube);
+            cube = Up(cube);
+        } else if (cube[5] == solved[34] && cube[28] == solved[41]) // case 92 - 35-42 : 6-29
+        {
+            cube = Dp(cube);
+            cube = Fp(cube);
+            cube = R(cube);
+            cube = F(cube);
+        } else if (cube[5] == solved[46] && cube[28] == solved[41]) // case 93 - 47-44 : 6-29
+        {
+            cube = B(cube);
+            cube = Rp(cube);
+            cube = Bp(cube);
+        } else if (cube[1] == solved[16] && cube[28] == solved[39]) // case 94 - 17-40 : 6-29
+        {
+            cube = U(cube);
+            cube = Lp(cube);
+            cube = F(cube);
+            cube = L(cube);
+            cube = Up(cube);
+        } else if (cube[5] == solved[32] && cube[28] == solved[50]) // case 95 - 33-51 : 6-29
+        {
+            cube = Up(cube);
+            cube = B(cube);
+            cube = U(cube);
+        } else if (cube[5] == solved[12] && cube[28] == solved[48]) // case 96 - 13-49 : 6-29
+        {
+            cube = Up(cube);
+            cube = Bp(cube);
+            cube = U(cube);
+        }
+
+        return (cube);
+    }
+
+//F2L
+    public static char[] F2L(char[] cube) {
+        return cube;
+    }
 
 //OLL
+
 //PLL 
     public static char[] AdjacentEdgeSwap(char[] cube) {
         // Rp L Fp R2 L2 Bp R2 L2 Fp Rp L D2 R2 L2 U
