@@ -17,12 +17,13 @@ public class RubiksCube {
     // cube[5] is spot number 6
     // test code right here
     public static void main(String[] arguments) {
-        char[] cube = {'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W',
-            'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
-            'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G',
-            'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
-            'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
-            'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',};
+//        char[] cube = {'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W',
+//            'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
+//            'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G',
+//            'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
+//            'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
+//            'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',};
+//        char[] cube = new char[54];
 
         char[] solved = {'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W',
             'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
@@ -31,82 +32,102 @@ public class RubiksCube {
             'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
             'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',};
 
-        String printCube = new String(cube);
-
-        int w_counter = 0;
-        int o_counter = 0;
-        int g_counter = 0;
-        int r_counter = 0;
-        int y_counter = 0;
-        int b_counter = 0;
-        final int MAX_COLOR = 9;
-        int cubeLength = cube.length;
-
-        System.out.println("RUBIK'S CUBE SOLVER");
-        System.out.println("");
-        System.out.println("Add your colors");
-        Scanner eingabe = new Scanner(System.in);
-
-        for (int whichSpot = 0; whichSpot < cubeLength; whichSpot++) {
-            System.out.println("Give " + whichSpot + ": ");
-            //bool is_value_set = false;
-            // while is_value_set != false
-            char user_color = eingabe.next().charAt(0);
-
-            if (user_color == 'W' && w_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                w_counter++;
-            } else if (user_color == 'O' && o_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                o_counter++;
-            } else if (user_color == 'G' && g_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                g_counter++;
-            } else if (user_color == 'R' && r_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                r_counter++;
-            } else if (user_color == 'Y' && y_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                y_counter++;
-            } else if (user_color == 'B' && b_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                b_counter++;
-            } else {
-                System.out.println();
-
-                if (user_color == 'B'
-                        || user_color == 'Y'
-                        || user_color == 'R'
-                        || user_color == 'W'
-                        || user_color == 'G'
-                        || user_color == 'O') {
-                    System.out.println("Color maximum used. Please re-try.");
-                } else {
-                    System.out.println("Value hasn't been set. Not a valid color.");
-                }
-
-                System.out.println();
-                whichSpot--;
-            }
-        }
+//        int w_counter = 0;
+//        int o_counter = 0;
+//        int g_counter = 0;
+//        int r_counter = 0;
+//        int y_counter = 0;
+//        int b_counter = 0;
+//        final int MAX_COLOR = 9;
+//        int cubeLength = cube.length;
+//
+//        System.out.println("RUBIK'S CUBE SOLVER");
+//        System.out.println("");
+//        System.out.println("Add your colors");
+//        Scanner eingabe = new Scanner(System.in);
+//
+//        for (int whichSpot = 0; whichSpot < cubeLength; whichSpot++) {
+//            System.out.println("Give " + whichSpot + ": ");
+//            //bool is_value_set = false;
+//            // while is_value_set != false
+//            char user_color = eingabe.next().charAt(0);
+//
+//            if (user_color == 'W' && w_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                w_counter++;
+//            } else if (user_color == 'O' && o_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                o_counter++;
+//            } else if (user_color == 'G' && g_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                g_counter++;
+//            } else if (user_color == 'R' && r_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                r_counter++;
+//            } else if (user_color == 'Y' && y_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                y_counter++;
+//            } else if (user_color == 'B' && b_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                b_counter++;
+//            } else {
+//                System.out.println();
+//
+//                if (user_color == 'B'
+//                        || user_color == 'Y'
+//                        || user_color == 'R'
+//                        || user_color == 'W'
+//                        || user_color == 'G'
+//                        || user_color == 'O') {
+//                    System.out.println("Color maximum used. Please re-try.");
+//                } else {
+//                    System.out.println("Value hasn't been set. Not a valid color.");
+//                }
+//
+//                System.out.println();
+//                whichSpot--;
+//            }
+//        }
+        
+        char[] cube = new String("WYBGWYGBYGORYOGGWYWRBRGOGYORGWBRRYWORRBOYBYWWOGBBBWOOR").toCharArray();
 
         System.out.println("Here is the scrambled cube:");
         System.out.println(cube);
-        
-    }
+
+        // WhiteCross
+        cube = WhiteCross820(cube, solved);
+        cube = WhiteCross411(cube, solved);
+        cube = WhiteCross253(cube, solved);
+        cube = WhiteCross629(cube, solved);
+        cube = F2L_corners11052(cube, solved);
+        cube = F2L_corners35430(cube, solved);
+        cube = F2L_corners61811(cube, solved);
+        cube = F2L_corners82710(cube, solved);
+        cube = F2L_edges2330(cube, solved);
+        cube = F2L_edges1421(cube, solved);
+        cube = F2L_edges1248(cube, solved);
+        cube = F2L_edges3250(cube, solved);
+        cube = OLL_edges(cube, solved);
+        cube = OLL_corners(cube, solved);
+        cube = PLL_corners(cube, solved);
+        cube = PLL_edges(cube, solved);
+
+        System.out.println(cube);
+
+     }
 
 //WHITE-CROSS    
     //White Cross (8-20)    
     public static char[] WhiteCross820(char[] cube, char[] solved) {
         if (cube[7] == solved[7] && cube[19] == solved[19]) // case 1 - 8-20 : 8-20
         {
-            // do the moves here
+            return(cube);// do the moves here
         } else if (cube[7] == solved[5] && cube[19] == solved[28]) // case 2 - 6-29 : 8-20
         {
             cube = R(cube);
@@ -141,10 +162,9 @@ public class RubiksCube {
             cube = F(cube);
         } else if (cube[7] == solved[25] && cube[19] == solved[37]) // case 6 - 26-38 : 8-20
         {
-            cube = R(cube);
+            cube = Dp(cube);
             cube = Lp(cube);
             cube = F(cube);
-            cube = Rp(cube);
             cube = L(cube);
         } else if (cube[7] == solved[21] && cube[19] == solved[14]) // case 7 - 22-15 : 8-20
         {
@@ -226,6 +246,7 @@ public class RubiksCube {
             cube = R(cube);
             cube = Fp(cube);
             cube = Rp(cube);
+            cube = Fp(cube);
         } else if (cube[7] == solved[16] && cube[19] == solved[39]) // case 22 - 17-40 : 8-20
         {
             cube = Lp(cube);
@@ -246,7 +267,7 @@ public class RubiksCube {
             cube = L(cube);
             cube = L(cube);
         }
-        System.out.print("a");
+        System.out.println("719");
         return (cube);
     }
 
@@ -254,7 +275,7 @@ public class RubiksCube {
     public static char[] WhiteCross411(char[] cube, char[] solved) {
         if (cube[3] == solved[3] && cube[10] == solved[10]) // case 1 - 4-11 : 4-11
         {
-            // do the moves here
+            return(cube);// do the moves here
         } else if (cube[3] == solved[7] && cube[10] == solved[19]) // case 2 - 8-20 : 4-11
         {
             cube = F(cube);
@@ -344,9 +365,8 @@ public class RubiksCube {
             // do the moves here
         } else if (cube[3] == solved[52] && cube[10] == solved[1]) // case 14 - 53-2 : 4-11
         {
-            cube = Bp(cube);
-            cube = L(cube);
             cube = B(cube);
+            cube = L(cube);
             // do the moves here
         } else if (cube[3] == solved[10] && cube[10] == solved[3]) // case 15 - 11-4 : 4-11
         {
@@ -374,20 +394,19 @@ public class RubiksCube {
             cube = Up(cube);
             cube = F(cube);
             cube = U(cube);
-            cube = Fp(cube);
             // do the moves here
         } else if (cube[3] == solved[34] && cube[10] == solved[41]) // case 19 - 35-42 : 4-11
         {
             cube = Dp(cube);
-            cube = L(cube);
             cube = F(cube);
             cube = Lp(cube);
+            cube = Fp(cube);
             // do the moves here
         } else if (cube[3] == solved[46] && cube[10] == solved[43]) // case 20 - 47-44 : 4-11
         {
-            cube = B(cube);
-            cube = L(cube);
             cube = Bp(cube);
+            cube = L(cube);
+            cube = B(cube);
             // do the moves here
         } else if (cube[3] == solved[16] && cube[10] == solved[39]) // case 21 - 17-40 : 4-11
         {
@@ -400,16 +419,17 @@ public class RubiksCube {
         } else if (cube[3] == solved[32] && cube[10] == solved[50]) // case 22 - 33-51 : 4-11
         {
             cube = U(cube);
-            cube = Bp(cube);
+            cube = B(cube);
             cube = Up(cube);
             // do the moves here
         } else if (cube[3] == solved[12] && cube[10] == solved[48]) // case 23 - 13-49 : 4-11
         {
             cube = U(cube);
-            cube = B(cube);
+            cube = Bp(cube);
             cube = Up(cube);
             // do the moves here
         }
+        System.out.println("310");
         return (cube);
     }
 
@@ -433,7 +453,7 @@ public class RubiksCube {
             cube = B(cube);
         } else if (cube[1] == solved[1] && cube[52] == solved[52]) // case 51 - 2-53 : 2-53
         {
-            //- 
+            return(cube);//- 
         } else if (cube[1] == solved[3] && cube[52] == solved[10]) // case 52 - 4-11 : 2-53
         {
             cube = L(cube);
@@ -549,7 +569,7 @@ public class RubiksCube {
         {
             cube = Bp(cube);
         }
-
+        System.out.println("152");
         return (cube);
     }
 
@@ -564,7 +584,7 @@ public class RubiksCube {
             cube = R(cube);
         } else if (cube[5] == solved[5] && cube[28] == solved[28]) // case 74 - 6-29 : 6-29
         {
-            //-
+            return(cube);//-
         } else if (cube[5] == solved[1] && cube[28] == solved[52]) // case 75 - 2-53 : 6-29
         {
             cube = U(cube);
@@ -682,7 +702,7 @@ public class RubiksCube {
             cube = Bp(cube);
             cube = U(cube);
         }
-
+        System.out.println("528");
         return (cube);
     }
 
@@ -692,7 +712,7 @@ public class RubiksCube {
         if (cube[0] == solved[0]
                 && cube[9] == solved[9]
                 && cube[51] == solved[51]) {
-
+            return(cube);
         } else if (cube[0] == solved[2]
                 && cube[9] == solved[53]
                 && cube[51] == solved[29]
@@ -920,6 +940,7 @@ public class RubiksCube {
             cube = D(cube);
             cube = Bp(cube);
         }
+        System.out.println("0951");
         return cube;
     }
 
@@ -927,7 +948,7 @@ public class RubiksCube {
         if (cube[2] == solved[2]
                 && cube[53] == solved[53]
                 && cube[29] == solved[29]) {
-
+            return(cube);
         } else if (cube[2] == solved[0]
                 && cube[53] == solved[9]
                 && cube[29] == solved[51]
@@ -1207,6 +1228,7 @@ public class RubiksCube {
             cube = Bp(cube);
             cube = U(cube);
         }
+        System.out.println("25329");
         return cube;
     }
 
@@ -1214,7 +1236,7 @@ public class RubiksCube {
         if (cube[6] == solved[6]
                 && cube[18] == solved[18]
                 && cube[11] == solved[11]) {
-
+            return(cube);
         } else if (cube[6] == solved[0]
                 && cube[18] == solved[9]
                 && cube[11] == solved[51]
@@ -1490,6 +1512,7 @@ public class RubiksCube {
             cube = Bp(cube);
             cube = Up(cube);
         }
+        System.out.println("61811");
         return cube;
     }
 
@@ -1497,7 +1520,7 @@ public class RubiksCube {
         if (cube[8] == solved[8]
                 && cube[27] == solved[27]
                 && cube[20] == solved[20]) {
-
+            return(cube);
         } else if (cube[8] == solved[0]
                 && cube[27] == solved[9]
                 && cube[20] == solved[51]
@@ -1837,6 +1860,7 @@ public class RubiksCube {
             cube = U(cube);
             cube = U(cube);
         }
+        System.out.println("82720");
         return cube;
     }
 
@@ -1844,7 +1868,7 @@ public class RubiksCube {
     public static char[] F2L_edges2330(char[] cube, char[] solved) {
         if (cube[23] == solved[23]
                 && cube[30] == solved[30]) {
-
+            return(cube);
         } else if (cube[23] == solved[14]
                 && cube[30] == solved[21]
                 && true) {
@@ -2051,13 +2075,14 @@ public class RubiksCube {
             cube = Dp(cube);
             cube = Fp(cube);
         }
+        System.out.println("2330");
         return cube;
     }
 
     public static char[] F2L_edges1421(char[] cube, char[] solved) {
         if (cube[14] == solved[14]
                 && cube[21] == solved[21]) {
-
+            return(cube);
         } else if (cube[14] == solved[23]
                 && cube[21] == solved[30]
                 && true) {
@@ -2262,13 +2287,14 @@ public class RubiksCube {
             cube = Dp(cube);
             cube = Lp(cube);
         }
+        System.out.println("1421");
         return cube;
     }
 
     public static char[] F2L_edges1248(char[] cube, char[] solved) {
         if (cube[12] == solved[12]
                 && cube[48] == solved[48]) {
-
+            return(cube);
         } else if (cube[12] == solved[14]
                 && cube[48] == solved[21]
                 && true) {
@@ -2475,13 +2501,14 @@ public class RubiksCube {
             cube = D(cube);
             cube = L(cube);
         }
+        System.out.println("1248");
         return cube;
     }
 
     public static char[] F2L_edges3250(char[] cube, char[] solved) {
         if (cube[32] == solved[32]
                 && cube[50] == solved[50]) {
-
+            return(cube);
         } else if (cube[32] == solved[14]
                 && cube[50] == solved[21]
                 && true) {
@@ -2682,6 +2709,7 @@ public class RubiksCube {
             cube = Dp(cube);
             cube = Rp(cube);
         }
+        System.out.println("3250");
         return cube;
     }
 
@@ -2690,7 +2718,9 @@ public class RubiksCube {
     public static char[] OLL_edges(char[] cube, char[] solved) {
         if (cube[39] == solved[39] && cube[37] == solved[37] && cube[41] == solved[41] && cube[43] == solved[43]) // case 1:finished cross - - : -
         {
-            // do the moves here
+            System.out.println("OLL edges");
+            return(cube);// do the moves here
+                    
         } else if (cube[37] == solved[37] && cube[43] == solved[43]) // case 2:I-shape vertical - - : -
         {
             cube = D(cube);
@@ -2701,15 +2731,16 @@ public class RubiksCube {
             cube = Dp(cube);
             cube = Fp(cube);
             cube = Dp(cube);
+            cube = Dp(cube);
         } else if (cube[39] == solved[39] && cube[41] == solved[41]) // case 3:I-shape horizontal - - : -
         {
             cube = F(cube);
             cube = L(cube);
             cube = D(cube);
             cube = Lp(cube);
-            cube = Dp(cube);
+            cube = Dp(cube);           
             cube = Fp(cube);
-        } else if (cube[37] == solved[37] && cube[39] == solved[39] && cube[41] != solved[41] && cube[43] != solved[43]) // case 4:L-shape left upper - - : -
+        } else if (cube[41] == solved[41] && cube[43] == solved[43] && cube[39] != solved[39] && cube[37] != solved[37]) // case 4:L-shape left upper - - : -
         {
             cube = D(cube);
             cube = D(cube);
@@ -2719,7 +2750,7 @@ public class RubiksCube {
             cube = Dp(cube);
             cube = Rp(cube);
             cube = Bp(cube);
-        } else if (cube[37] == solved[37] && cube[41] == solved[41] && cube[39] != solved[39] && cube[43] != solved[43]) // case 5:L-shape right upper - - : -
+        } else if (cube[39] == solved[39] && cube[43] == solved[43] && cube[37] != solved[37] && cube[41] != solved[41]) // case 5:L-shape right upper - - : -
         {
             cube = D(cube);
             cube = B(cube);
@@ -2728,7 +2759,7 @@ public class RubiksCube {
             cube = Dp(cube);
             cube = Rp(cube);
             cube = Bp(cube);
-        } else if (cube[39] == solved[39] && cube[43] == solved[43] && cube[37] != solved[37] && cube[41] != solved[41]) // case 6:L-shape left lower - - : -
+        } else if (cube[37] == solved[37] && cube[41] == solved[41] && cube[39] != solved[39] && cube[43] != solved[43]) // case 6:L-shape left lower - - : -
         {
             cube = Dp(cube);
             cube = B(cube);
@@ -2737,7 +2768,7 @@ public class RubiksCube {
             cube = Dp(cube);
             cube = Rp(cube);
             cube = Bp(cube);
-        } else if (cube[41] == solved[41] && cube[43] == solved[43] && cube[39] != solved[39] && cube[37] != solved[37]) // case 7:L-shape right lower - - : -
+        } else if (cube[37] == solved[37] && cube[39] == solved[39] && cube[41] != solved[41] && cube[43] != solved[43]) // case 7:L-shape right lower - - : -
         {
             cube = B(cube);
             cube = D(cube);
@@ -2760,6 +2791,7 @@ public class RubiksCube {
             cube = Rp(cube);
             cube = Bp(cube);
         }
+        System.out.println("OLL edges");
         return (cube);
     }
 
@@ -2767,8 +2799,9 @@ public class RubiksCube {
     public static char[] OLL_corners(char[] cube, char[] solved) {
         if (cube[36] == solved[36] && cube[38] == solved[38] && cube[42] == solved[42] && cube[44] == solved[44]) // case 1:finished cross - - : -
         {
-            // do the moves here
-        } else if (cube[42] == solved[40] && cube[47] == solved[40] && cube[33] == solved[40] && cube[24] == solved[40]) // case 2:sune left upper - - : -
+            System.out.println("OLL corners");
+            return(cube);// do the moves here
+        } else if (cube[42] == solved[40] && cube[47] == solved[40] && cube[33] == solved[40] && cube[24] == solved[40]) // sune right upper - - : -
         {
             cube = D(cube);
             cube = D(cube);
@@ -2779,7 +2812,7 @@ public class RubiksCube {
             cube = Lp(cube);
             cube = Dp(cube);
             cube = R(cube);
-        } else if (cube[44] == solved[40] && cube[33] == solved[40] && cube[24] == solved[40] && cube[15] == solved[40]) // case 3:sune left lower - - : -
+        } else if (cube[44] == solved[40] && cube[33] == solved[40] && cube[24] == solved[40] && cube[15] == solved[40]) // sune left upper - - : -
         {
             cube = Dp(cube);
             cube = L(cube);
@@ -2789,7 +2822,7 @@ public class RubiksCube {
             cube = Lp(cube);
             cube = Dp(cube);
             cube = R(cube);
-        } else if (cube[36] == solved[40] && cube[15] == solved[40] && cube[47] == solved[40] && cube[33] == solved[40]) // case 4:sune right upper - - : -
+        } else if (cube[36] == solved[40] && cube[15] == solved[40] && cube[47] == solved[40] && cube[33] == solved[40]) // sune right lower - - : -
         {
             cube = D(cube);
             cube = L(cube);
@@ -2799,13 +2832,15 @@ public class RubiksCube {
             cube = Lp(cube);
             cube = Dp(cube);
             cube = R(cube);
-        } else if (cube[38] == solved[40] && cube[24] == solved[40] && cube[15] == solved[40] && cube[47] == solved[40]) // case 5:sune right lower - - : -
+        } else if (cube[38] == solved[40] && cube[24] == solved[40] && cube[15] == solved[40] && cube[47] == solved[40]) // case 5:sune left lower - - : -
         {
             cube = L(cube);
             cube = Dp(cube);
             cube = Rp(cube);
             cube = D(cube);
             cube = Lp(cube);
+            cube = Dp(cube);
+            cube = R(cube);
         } else if (cube[15] == solved[40] && cube[17] == solved[40] && cube[33] == solved[40] && cube[35] == solved[40]) // case 6:H-shape horizontal - - : -
         {
             cube = D(cube);
@@ -2839,7 +2874,7 @@ public class RubiksCube {
             cube = Lp(cube);
             cube = Dp(cube);
             cube = Fp(cube);
-        } else if (cube[33] == solved[40] && cube[45] == solved[40]) // case 8:L left upper - - : -
+        } else if (cube[33] == solved[40] && cube[45] == solved[40] && cube[44] == solved[40] && cube[36] == solved[40]) // case 8:L left upper - - : -
         {
             cube = Dp(cube);
             cube = Dp(cube);
@@ -2851,7 +2886,7 @@ public class RubiksCube {
             cube = Fp(cube);
             cube = L(cube);
             cube = B(cube);
-        } else if (cube[24] == solved[40] && cube[35] == solved[40]) // case 9:L left lower - - : -
+        } else if (cube[24] == solved[40] && cube[35] == solved[40] && cube[38] == solved[40] && cube[42] == solved[40]) // case 9:L left lower - - : -
         {
             cube = Fp(cube);
             cube = R(cube);
@@ -2861,7 +2896,7 @@ public class RubiksCube {
             cube = Rp(cube);
             cube = F(cube);
             cube = L(cube);
-        } else if (cube[17] == solved[40] && cube[47] == solved[40]) // case 10:L right upper - - : -
+        } else if (cube[17] == solved[40] && cube[47] == solved[40] && cube[38] == solved[40] && cube[42] == solved[40]) // case 10:L right upper - - : -
         {
             cube = Bp(cube);
             cube = L(cube);
@@ -2871,7 +2906,7 @@ public class RubiksCube {
             cube = Lp(cube);
             cube = B(cube);
             cube = R(cube);
-        } else if (cube[15] == solved[40] && cube[26] == solved[40]) // case 11:L right lower - - : -
+        } else if (cube[15] == solved[40] && cube[26] == solved[40] && cube[36] == solved[40] && cube[44] == solved[40]) // case 11:L right lower - - : -
         {
             cube = Lp(cube);
             cube = F(cube);
@@ -2916,126 +2951,116 @@ public class RubiksCube {
         } else if (cube[15] == solved[40] && cube[17] == solved[40] && cube[26] == solved[40] && cube[47] == solved[40]) // case 14:Pi right - - : -
         {
             cube = R(cube);
-            cube = U(cube);
-            cube = U(cube);
+            cube = D(cube);
+            cube = D(cube);
             cube = R(cube);
             cube = R(cube);
-            cube = Up(cube);
+            cube = Dp(cube);
             cube = R(cube);
             cube = R(cube);
-            cube = Up(cube);
+            cube = Dp(cube);
             cube = R(cube);
             cube = R(cube);
-            cube = U(cube);
-            cube = U(cube);
+            cube = D(cube);
+            cube = D(cube);
             cube = R(cube);
-            cube = F(cube);
-            cube = F(cube);
         } else if (cube[24] == solved[40] && cube[26] == solved[40] && cube[15] == solved[40] && cube[35] == solved[40]) // case 15:Pi front - - : -
         {
+            cube = Dp(cube);
             cube = R(cube);
-            cube = U(cube);
-            cube = U(cube);
-            cube = R(cube);
-            cube = R(cube);
-            cube = Up(cube);
+            cube = D(cube);
+            cube = D(cube);
             cube = R(cube);
             cube = R(cube);
-            cube = Up(cube);
+            cube = Dp(cube);
             cube = R(cube);
             cube = R(cube);
-            cube = U(cube);
-            cube = U(cube);
+            cube = Dp(cube);
             cube = R(cube);
-            cube = F(cube);
-        } else if (cube[38] == solved[40] && cube[17] == solved[40] && cube[35] == solved[40] && cube[45] == solved[40]) // case 16:antisune left upper - - : -
+            cube = R(cube);
+            cube = D(cube);
+            cube = D(cube);
+            cube = R(cube);
+        } else if (cube[44] == solved[40] && cube[17] == solved[40] && cube[26] == solved[40] && cube[45] == solved[40]) // case 16:antisune left upper - - : -
         {
-            cube = R(cube);
-            cube = U(cube);
-            cube = U(cube);
-            cube = Rp(cube);
-            cube = Up(cube);
-            cube = R(cube);
-            cube = Up(cube);
-            cube = Rp(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = L(cube);
+            cube = Dp(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
+            cube = Dp(cube);
+            cube = L(cube);
+        } else if (cube[38] == solved[40] && cube[17] == solved[40] && cube[35] == solved[40] && cube[45] == solved[40]) // case 17:anitsune left lower - - : -
+        {
+            cube = Bp(cube);
+            cube = Dp(cube);
+            cube = B(cube);
+            cube = Dp(cube);
+            cube = Bp(cube);
+            cube = Dp(cube);
+            cube = Dp(cube);
+            cube = B(cube);
+        } else if (cube[42] == solved[40] && cube[17] == solved[40] && cube[26] == solved[40] && cube[35] == solved[40]) // case 18:antisune right upper - - : -
+        {
             cube = Fp(cube);
-        } else if (cube[36] == solved[40] && cube[26] == solved[40] && cube[35] == solved[40] && cube[45] == solved[40]) // case 17:anitsune left lower - - : -
-        {
-            cube = R(cube);
-            cube = U(cube);
-            cube = U(cube);
-            cube = Rp(cube);
-            cube = Up(cube);
-            cube = R(cube);
-            cube = Up(cube);
-            cube = Rp(cube);
+            cube = Dp(cube);
             cube = F(cube);
+            cube = Dp(cube);
+            cube = Fp(cube);
+            cube = Dp(cube);
+            cube = Dp(cube);
             cube = F(cube);
-        } else if (cube[44] == solved[40] && cube[17] == solved[40] && cube[26] == solved[40] && cube[45] == solved[40]) // case 18:antisune right upper - - : -
+        } else if (cube[36] == solved[40] && cube[26] == solved[40] && cube[35] == solved[40] && cube[45] == solved[40]) // case 19:antisune right lower - - : -
         {
-            cube = R(cube);
-            cube = U(cube);
-            cube = U(cube);
             cube = Rp(cube);
-            cube = Up(cube);
+            cube = Dp(cube);
             cube = R(cube);
-            cube = Up(cube);
+            cube = Dp(cube);
             cube = Rp(cube);
-        } else if (cube[42] == solved[40] && cube[17] == solved[40] && cube[26] == solved[40] && cube[35] == solved[40]) // case 19:antisune right lower - - : -
-        {
+            cube = Dp(cube);
+            cube = Dp(cube);
             cube = R(cube);
-            cube = U(cube);
-            cube = U(cube);
-            cube = Rp(cube);
-            cube = Up(cube);
-            cube = R(cube);
-            cube = Up(cube);
-            cube = Rp(cube);
-            cube = F(cube);
         } else if (cube[26] == solved[40] && cube[47] == solved[40] && cube[36] == solved[40] && cube[42] == solved[40]) // case 20:T left  - - : -
         {
             cube = R(cube);
-            cube = U(cube);
-            cube = Rp(cube);
-            cube = Up(cube);
+            cube = F(cube);
+            cube = Lp(cube);
+            cube = Fp(cube);
             cube = Rp(cube);
             cube = F(cube);
-            cube = R(cube);
+            cube = L(cube);
             cube = Fp(cube);
         } else if (cube[24] == solved[40] && cube[45] == solved[40] && cube[38] == solved[40] && cube[44] == solved[40]) // case 21:T right - - : -
         {
-            cube = R(cube);
-            cube = U(cube);
+            cube = L(cube);
+            cube = B(cube);
             cube = Rp(cube);
-            cube = Up(cube);
-            cube = Rp(cube);
-            cube = F(cube);
+            cube = Bp(cube);
+            cube = Lp(cube);
+            cube = B(cube);
             cube = R(cube);
-            cube = Fp(cube);
-            cube = F(cube);
-            cube = F(cube);
+            cube = Bp(cube);
         } else if (cube[17] == solved[40] && cube[33] == solved[40] && cube[42] == solved[40] && cube[44] == solved[40]) // case 22:T front - - : -
         {
-            cube = R(cube);
-            cube = U(cube);
-            cube = Rp(cube);
-            cube = Up(cube);
-            cube = Rp(cube);
             cube = F(cube);
-            cube = R(cube);
+            cube = L(cube);
+            cube = Bp(cube);
+            cube = Lp(cube);
             cube = Fp(cube);
-            cube = F(cube);
+            cube = L(cube);
+            cube = B(cube);
+            cube = Lp(cube);
         } else if (cube[15] == solved[40] && cube[35] == solved[40] && cube[36] == solved[40] && cube[38] == solved[40]) // case 23:T back - - : -
         {
+            cube = B(cube);
             cube = R(cube);
-            cube = U(cube);
+            cube = Fp(cube);
             cube = Rp(cube);
-            cube = Up(cube);
-            cube = Rp(cube);
+            cube = Bp(cube);
+            cube = R(cube);
             cube = F(cube);
-            cube = R(cube);
-            cube = Fp(cube);
-            cube = Fp(cube);
+            cube = Rp(cube);
         } else if (cube[33] == solved[40] && cube[35] == solved[40] && cube[36] == solved[40] && cube[42] == solved[40]) // case 24:U left - - : -
         {
             cube = Dp(cube);
@@ -3097,171 +3122,174 @@ public class RubiksCube {
             cube = D(cube);
             cube = Lp(cube);
         }
+        System.out.println("OLL corners");
         return (cube);
     }
 
 //PLL 
     //Part 1
-    public static char[] PLL_part1(char[] cube, char[] solved) {
+    public static char[] PLL_corners(char[] cube, char[] solved) {
         int D = 0;
-        while (D == 0){
-        if (cube[24] == solved[24]
-                && cube[26] == solved[26]
-                && cube[45] == solved[45]
-                && cube[47] == solved[47]) //finished edges
-        {
-            
-        } else if (cube[24] == solved[22]
-                && cube[35] == solved[31]
-                && cube[47] == solved[49]
-                && cube[17] == solved[13]) //diagonal L front
-        {
-            cube = Dp(cube);
-            cube = F(cube);
-            cube = L(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Fp(cube);
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = F(cube);
-            cube = L(cube);
-            cube = Fp(cube);
-            cube = D(cube);
-        } else if (cube[26] == solved[22]
-                && cube[33] == solved[31]
-                && cube[15] == solved[13]
-                && cube[45] == solved[49]) //diagonal R front
-        {
-            cube = F(cube);
-            cube = L(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Fp(cube);
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = F(cube);
-            cube = L(cube);
-            cube = Fp(cube);
-        } else if (cube[15] == solved[13]
-                && cube[17] == solved[13]
-                && cube[24] == solved[22]
-                && cube[45] == solved[49]) //headlights L
-        {
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = F(cube);
-            cube = L(cube);
-            cube = L(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Fp(cube);
-        } else if (cube[35] == solved[31]
-                && cube[33] == solved[31]
-                && cube[27] == solved[22]
-                && cube[47] == solved[49]) //headlights R
-        {
-            cube = D(cube);
-            cube = D(cube);
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = F(cube);
-            cube = L(cube);
-            cube = L(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Fp(cube);
-            cube = D(cube);
-            cube = D(cube);
-        } else if (cube[17] == solved[13]
-                && cube[33] == solved[31]
-                && cube[24] == solved[22]
-                && cube[26] == solved[22]) //headlights F
-        {
-            cube = D(cube);
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = F(cube);
-            cube = L(cube);
-            cube = L(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Fp(cube);
-            cube = D(cube);
-        } else if (cube[15] == solved[13]
-                && cube[35] == solved[31]
-                && cube[47] == solved[49]
-                && cube[45] == solved[49]) //headlights B
-        {
-            cube = Dp(cube);
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = F(cube);
-            cube = L(cube);
-            cube = L(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = L(cube);
-            cube = D(cube);
-            cube = Lp(cube);
-            cube = Fp(cube);
-            cube = Dp(cube);
-        } else{
-            cube = D(cube);
-            D = 1;
+        while (D < 3) {
+            if (cube[24] == solved[24]
+                    && cube[26] == solved[26]
+                    && cube[45] == solved[45]
+                    && cube[47] == solved[47]) //finished edges
+            {        
+                System.out.println("PLL corners");
+                return(cube);
+            } else if (cube[24] == solved[22]
+                    && cube[35] == solved[31]
+                    && cube[47] == solved[49]
+                    && cube[17] == solved[13]) //diagonal L front
+            {
+                cube = Dp(cube);
+                cube = F(cube);
+                cube = L(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Fp(cube);
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = F(cube);
+                cube = L(cube);
+                cube = Fp(cube);
+                cube = D(cube);
+            } else if (cube[26] == solved[22]
+                    && cube[33] == solved[31]
+                    && cube[15] == solved[13]
+                    && cube[45] == solved[49]) //diagonal R front
+            {
+                cube = F(cube);
+                cube = L(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Fp(cube);
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = F(cube);
+                cube = L(cube);
+                cube = Fp(cube);
+            } else if (cube[35] == solved[31]
+                    && cube[33] == solved[31]
+                    && cube[26] == solved[22]
+                    && cube[47] == solved[49]) //headlights L
+            {
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = F(cube);
+                cube = L(cube);
+                cube = L(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Fp(cube);
+            } else if (cube[15] == solved[13]
+                    && cube[17] == solved[13]
+                    && cube[24] == solved[22]
+                    && cube[45] == solved[49]) //headlights R
+            {
+                cube = D(cube);
+                cube = D(cube);
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = F(cube);
+                cube = L(cube);
+                cube = L(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Fp(cube);
+                cube = D(cube);
+                cube = D(cube);
+            } else if (cube[17] == solved[13]
+                    && cube[33] == solved[31]
+                    && cube[24] == solved[22]
+                    && cube[26] == solved[22]) //headlights F
+            {
+                cube = D(cube);
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = F(cube);
+                cube = L(cube);
+                cube = L(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Fp(cube);
+                cube = D(cube);
+            } else if (cube[15] == solved[13]
+                    && cube[35] == solved[31]
+                    && cube[47] == solved[49]
+                    && cube[45] == solved[49]) //headlights B
+            {
+                cube = Dp(cube);
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = F(cube);
+                cube = L(cube);
+                cube = L(cube);
+                cube = Dp(cube);
+                cube = Lp(cube);
+                cube = Dp(cube);
+                cube = L(cube);
+                cube = D(cube);
+                cube = Lp(cube);
+                cube = Fp(cube);
+                cube = Dp(cube);
+            } else {
+                cube = D(cube);
+                D++;
 //if no cases correct D and repeat
+            }
         }
-        }
+        System.out.println("PLL corners");
         return (cube);
     }
 
     //Part 2
-    public static char[] PLL_part2(char[] cube, char[] solved) {
+    public static char[] PLL_edges(char[] cube, char[] solved) {
         if (cube[25] == solved[22]
                 && cube[16] == solved[13]
                 && cube[34] == solved[31]
                 && cube[46] == solved[49]) //finished edges
         {
-            
+            return(cube);
         } else if (cube[25] == solved[49]
                 && cube[34] == solved[13]
                 && cube[46] == solved[22]
@@ -3287,10 +3315,10 @@ public class RubiksCube {
             cube = R(cube);
             cube = Lp(cube);
             cube = Lp(cube);
-        } else if (cube[25] == solved[49]
-                && cube[34] == solved[13]
+        } else if (cube[16] == solved[49]
+                && cube[25] == solved[13]
                 && cube[46] == solved[22]
-                && cube[16] == solved[31]) //UaL
+                && cube[34] == solved[31]) //UaL
         {
             cube = D(cube);
             cube = L(cube);
@@ -3307,7 +3335,7 @@ public class RubiksCube {
             cube = L(cube);
             cube = Dp(cube);
         } else if (cube[25] == solved[49]
-                && cube[13] == solved[13]
+                && cube[16] == solved[13]
                 && cube[34] == solved[22]
                 && cube[46] == solved[31]) //UaR
         {
@@ -3401,10 +3429,10 @@ public class RubiksCube {
             cube = D(cube);
             cube = Lp(cube);
             cube = D(cube);
-        } else if (cube[46] == solved[49]
-                && cube[34] == solved[13]
-                && cube[16] == solved[22]
-                && cube[25] == solved[31]) //UbF
+        } else if (cube[34] == solved[49]
+                && cube[46] == solved[13]
+                && cube[25] == solved[22]
+                && cube[16] == solved[31]) //UbF
         {
             cube = Dp(cube);
             cube = Dp(cube);
@@ -3422,10 +3450,10 @@ public class RubiksCube {
             cube = Lp(cube);
             cube = D(cube);
             cube = D(cube);
-        } else if (cube[34] == solved[49]
-                && cube[46] == solved[13]
-                && cube[25] == solved[22]
-                && cube[16] == solved[31]) //UbB
+        } else if (cube[46] == solved[49]
+                && cube[34] == solved[13]
+                && cube[16] == solved[22]
+                && cube[25] == solved[31]) //UbB
         {
             cube = L(cube);
             cube = L(cube);
@@ -3496,6 +3524,7 @@ public class RubiksCube {
             cube = Lp(cube);
             cube = D(cube);
         }
+        System.out.println("PLL edges");
         return (cube);
     }
 
