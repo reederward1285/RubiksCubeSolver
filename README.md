@@ -102,3 +102,6 @@ https://jperm.net/algs/2lookoll
 
 PLL's from:
 https://jperm.net/algs/2lookpll
+
+Excel algorithms spreadsheet:
+https://onedrive.live.com/view.aspx?resid=6AF1DA9E94F0B9F1!2313&ithint=file%2cxlsx&authkey=!AAL6ZTCOhQbLKhM
