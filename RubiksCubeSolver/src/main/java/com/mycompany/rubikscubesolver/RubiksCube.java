@@ -95,7 +95,7 @@ public class RubiksCube {
 //            }
 //        }
         
-        char[] cube = new String("WYBGWYGBYGORYOGGWYWRBRGOGYORGWBRRYWORRBOYBYWWOGBBBWOOR").toCharArray();
+        char[] cube = "WYBGWYGBYGORYOGGWYWRBRGOGYORGWBRRYWORRBOYBYWWOGBBBWOOR".toCharArray();
 
         System.out.println("Here is the scrambled cube:");
         System.out.println(cube);
@@ -117,7 +117,8 @@ public class RubiksCube {
         cube = OLL_corners(cube, solved);
         cube = PLL_corners(cube, solved);
         cube = PLL_edges(cube, solved);
-
+        
+        System.out.println("Here is the cube after the moves:");
         System.out.println(cube);
 
      }
@@ -550,7 +551,7 @@ public class RubiksCube {
             cube = Rp(cube);
             cube = B(cube);
             cube = R(cube);
-        } else if (cube[1] == solved[46] && cube[52] == solved[41]) // case 69 - 47-44 : 2-53
+        } else if (cube[1] == solved[46] && cube[52] == solved[43]) // case 69 - 47-44 : 2-53
         {
             cube = B(cube);
             cube = U(cube);
@@ -664,10 +665,10 @@ public class RubiksCube {
             cube = Up(cube);
         } else if (cube[5] == solved[37] && cube[28] == solved[25]) // case 90 - 38-26 : 6-29
         {
-            cube = U(cube);
-            cube = F(cube);
-            cube = F(cube);
             cube = Up(cube);
+            cube = F(cube);
+            cube = F(cube);
+            cube = U(cube);
         } else if (cube[5] == solved[14] && cube[28] == solved[21]) // case 91 - 15-22 : 6-29
         {
             cube = U(cube);
@@ -684,7 +685,7 @@ public class RubiksCube {
             cube = B(cube);
             cube = Rp(cube);
             cube = Bp(cube);
-        } else if (cube[1] == solved[16] && cube[28] == solved[39]) // case 94 - 17-40 : 6-29
+        } else if (cube[5] == solved[16] && cube[28] == solved[39]) // case 94 - 17-40 : 6-29
         {
             cube = U(cube);
             cube = Lp(cube);
@@ -718,11 +719,11 @@ public class RubiksCube {
                 && cube[51] == solved[29]
                 && true) {
             cube = Bp(cube);
-            cube = Dp(cube);
+            cube = D(cube);
             cube = B(cube);
             cube = D(cube);
             cube = Lp(cube);
-            cube = D(cube);
+            cube = Dp(cube);
             cube = L(cube);
         } else if (cube[0] == solved[8]
                 && cube[9] == solved[27]
@@ -768,12 +769,13 @@ public class RubiksCube {
                 && cube[9] == solved[8]
                 && cube[51] == solved[27]
                 && true) {
-            cube = F(cube);
+            cube = Rp(cube);
+            cube = D(cube);
+            cube = R(cube);
             cube = Lp(cube);
             cube = D(cube);
             cube = D(cube);
             cube = L(cube);
-            cube = Fp(cube);
         } else if (cube[0] == solved[11]
                 && cube[9] == solved[6]
                 && cube[51] == solved[18]
@@ -801,7 +803,7 @@ public class RubiksCube {
                 && cube[51] == solved[2]
                 && true) {
             cube = Bp(cube);
-            cube = D(cube);
+            cube = Dp(cube);
             cube = B(cube);
             cube = D(cube);
             cube = D(cube);
@@ -822,11 +824,12 @@ public class RubiksCube {
                 && cube[9] == solved[11]
                 && cube[51] == solved[6]
                 && true) {
-            cube = Rp(cube);
-            cube = L(cube);
+            cube = Fp(cube);
             cube = Dp(cube);
-            cube = R(cube);
+            cube = F(cube);
             cube = Lp(cube);
+            cube = Dp(cube);
+            cube = L(cube);
         } else if (cube[0] == solved[45]
                 && cube[9] == solved[15]
                 && cube[51] == solved[42]
@@ -839,9 +842,9 @@ public class RubiksCube {
                 && cube[9] == solved[47]
                 && cube[51] == solved[44]
                 && true) {
-            cube = Rp(cube);
+            cube = Lp(cube);
             cube = D(cube);
-            cube = R(cube);
+            cube = L(cube);
         } else if (cube[0] == solved[26]
                 && cube[9] == solved[33]
                 && cube[51] == solved[38]
@@ -852,7 +855,7 @@ public class RubiksCube {
             cube = L(cube);
         } else if (cube[0] == solved[17]
                 && cube[9] == solved[24]
-                && cube[51] == solved[36]
+                && cube[52] == solved[36]
                 && true) {
             cube = D(cube);
             cube = Lp(cube);
@@ -887,10 +890,9 @@ public class RubiksCube {
                 && cube[9] == solved[36]
                 && cube[51] == solved[17]
                 && true) {
+            cube = B(cube);
             cube = Dp(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = L(cube);
+            cube = B(cube);
         } else if (cube[0] == solved[42]
                 && cube[9] == solved[45]
                 && cube[51] == solved[15]
@@ -967,11 +969,11 @@ public class RubiksCube {
                 && true) {
             cube = Up(cube);
             cube = Bp(cube);
-            cube = Dp(cube);
+            cube = D(cube);
             cube = B(cube);
             cube = D(cube);
             cube = Lp(cube);
-            cube = D(cube);
+            cube = Dp(cube);
             cube = L(cube);
             cube = U(cube);
         } else if (cube[2] == solved[6]
@@ -1028,23 +1030,25 @@ public class RubiksCube {
                 && cube[29] == solved[18]
                 && true) {
             cube = Up(cube);
-            cube = F(cube);
+            cube = Rp(cube);
+            cube = D(cube);
+            cube = R(cube);
             cube = Lp(cube);
             cube = D(cube);
             cube = D(cube);
             cube = L(cube);
-            cube = Fp(cube);
             cube = U(cube);
         } else if (cube[2] == solved[9]
                 && cube[53] == solved[51]
                 && cube[29] == solved[0]
                 && true) {
             cube = Up(cube);
-            cube = Rp(cube);
-            cube = L(cube);
+            cube = Fp(cube);
             cube = Dp(cube);
-            cube = R(cube);
+            cube = F(cube);
             cube = Lp(cube);
+            cube = Dp(cube);
+            cube = L(cube);
             cube = U(cube);
         } else if (cube[2] == solved[53]
                 && cube[53] == solved[29]
@@ -1065,7 +1069,7 @@ public class RubiksCube {
                 && true) {
             cube = Up(cube);
             cube = Bp(cube);
-            cube = D(cube);
+            cube = Dp(cube);
             cube = B(cube);
             cube = D(cube);
             cube = D(cube);
@@ -1134,9 +1138,10 @@ public class RubiksCube {
                 && cube[29] == solved[45]
                 && true) {
             cube = Up(cube);
-            cube = Lp(cube);
+            cube = D(cube);
+            cube = B(cube);
             cube = Dp(cube);
-            cube = L(cube);
+            cube = Bp(cube);
             cube = U(cube);
         } else if (cube[2] == solved[47]
                 && cube[53] == solved[44]
@@ -1236,6 +1241,7 @@ public class RubiksCube {
         if (cube[6] == solved[6]
                 && cube[18] == solved[18]
                 && cube[11] == solved[11]) {
+            System.out.println("61811");
             return(cube);
         } else if (cube[6] == solved[0]
                 && cube[18] == solved[9]
@@ -1243,11 +1249,11 @@ public class RubiksCube {
                 && true) {
             cube = U(cube);
             cube = Bp(cube);
-            cube = Dp(cube);
+            cube = D(cube);
             cube = B(cube);
             cube = D(cube);
             cube = Lp(cube);
-            cube = D(cube);
+            cube = Dp(cube);
             cube = L(cube);
             cube = Up(cube);
         } else if (cube[6] == solved[2]
@@ -1291,12 +1297,13 @@ public class RubiksCube {
                 && cube[11] == solved[53]
                 && true) {
             cube = U(cube);
-            cube = F(cube);
+            cube = Rp(cube);
+            cube = D(cube);
+            cube = R(cube);
             cube = Lp(cube);
             cube = D(cube);
             cube = D(cube);
             cube = L(cube);
-            cube = Fp(cube);
             cube = Up(cube);
         } else if (cube[6] == solved[20]
                 && cube[18] == solved[8]
@@ -1329,7 +1336,7 @@ public class RubiksCube {
                 && true) {
             cube = U(cube);
             cube = Bp(cube);
-            cube = D(cube);
+            cube = Dp(cube);
             cube = B(cube);
             cube = D(cube);
             cube = D(cube);
@@ -1354,11 +1361,12 @@ public class RubiksCube {
                 && cube[11] == solved[8]
                 && true) {
             cube = U(cube);
-            cube = Rp(cube);
-            cube = L(cube);
+            cube = Fp(cube);
             cube = Dp(cube);
-            cube = R(cube);
+            cube = F(cube);
             cube = Lp(cube);
+            cube = Dp(cube);
+            cube = L(cube);
             cube = Up(cube);
         } else if (cube[6] == solved[18]
                 && cube[18] == solved[11]
@@ -1379,9 +1387,9 @@ public class RubiksCube {
                 && true) {
             cube = U(cube);
             cube = Dp(cube);
-            cube = Rp(cube);
+            cube = Lp(cube);
             cube = D(cube);
-            cube = R(cube);
+            cube = L(cube);
             cube = Up(cube);
         } else if (cube[6] == solved[35]
                 && cube[18] == solved[47]
@@ -1441,10 +1449,9 @@ public class RubiksCube {
                 && true) {
             cube = U(cube);
             cube = Dp(cube);
+            cube = B(cube);
             cube = Dp(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = L(cube);
+            cube = Bp(cube);
             cube = Up(cube);
         } else if (cube[6] == solved[24]
                 && cube[18] == solved[36]
@@ -1556,11 +1563,11 @@ public class RubiksCube {
             cube = Up(cube);
             cube = Up(cube);
             cube = Bp(cube);
-            cube = Dp(cube);
+            cube = D(cube);
             cube = B(cube);
             cube = D(cube);
             cube = Lp(cube);
-            cube = D(cube);
+            cube = Dp(cube);
             cube = L(cube);
             cube = U(cube);
             cube = U(cube);
@@ -1570,12 +1577,13 @@ public class RubiksCube {
                 && true) {
             cube = Up(cube);
             cube = Up(cube);
-            cube = F(cube);
+            cube = Rp(cube);
+            cube = D(cube);
+            cube = R(cube);
             cube = Lp(cube);
             cube = D(cube);
             cube = D(cube);
             cube = L(cube);
-            cube = Fp(cube);
             cube = U(cube);
             cube = U(cube);
         } else if (cube[8] == solved[29]
@@ -1641,11 +1649,11 @@ public class RubiksCube {
                 && true) {
             cube = Up(cube);
             cube = Up(cube);
-            cube = Rp(cube);
-            cube = L(cube);
+            cube = Fp(cube);
             cube = Dp(cube);
-            cube = R(cube);
             cube = Lp(cube);
+            cube = Dp(cube);
+            cube = L(cube);
             cube = U(cube);
             cube = U(cube);
         } else if (cube[8] == solved[27]
@@ -1670,7 +1678,7 @@ public class RubiksCube {
             cube = Up(cube);
             cube = Up(cube);
             cube = Bp(cube);
-            cube = D(cube);
+            cube = Dp(cube);
             cube = B(cube);
             cube = D(cube);
             cube = D(cube);
@@ -1730,9 +1738,9 @@ public class RubiksCube {
             cube = Up(cube);
             cube = D(cube);
             cube = D(cube);
-            cube = Rp(cube);
+            cube = Lp(cube);
             cube = D(cube);
-            cube = R(cube);
+            cube = L(cube);
             cube = U(cube);
             cube = U(cube);
         } else if (cube[8] == solved[15]
@@ -1757,10 +1765,9 @@ public class RubiksCube {
             cube = Up(cube);
             cube = D(cube);
             cube = D(cube);
+            cube = B(cube);
             cube = Dp(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = L(cube);
+            cube = Bp(cube);
             cube = U(cube);
             cube = U(cube);
         } else if (cube[8] == solved[33]
@@ -2119,7 +2126,7 @@ public class RubiksCube {
                 && true) {
             cube = R(cube);
             cube = Dp(cube);
-            cube = R(cube);
+            cube = Rp(cube);
             cube = Dp(cube);
             cube = Bp(cube);
             cube = D(cube);
@@ -2262,9 +2269,9 @@ public class RubiksCube {
             cube = L(cube);
             cube = Dp(cube);
             cube = Lp(cube);
-            cube = Bp(cube);
+            cube = Dp(cube);
             cube = Fp(cube);
-            cube = B(cube);
+            cube = D(cube);
             cube = F(cube);
         } else if (cube[14] == solved[41]
                 && cube[21] == solved[34]
@@ -2272,9 +2279,9 @@ public class RubiksCube {
             cube = L(cube);
             cube = Dp(cube);
             cube = Lp(cube);
-            cube = Bp(cube);
+            cube = Dp(cube);
             cube = Fp(cube);
-            cube = B(cube);
+            cube = D(cube);
             cube = F(cube);
         } else if (cube[14] == solved[46]
                 && cube[21] == solved[43]
@@ -2435,7 +2442,7 @@ public class RubiksCube {
             cube = L(cube);
             cube = D(cube);
             cube = B(cube);
-            cube = Lp(cube);
+            cube = Dp(cube);
             cube = Bp(cube);
         } else if (cube[12] == solved[50]
                 && cube[48] == solved[32]
@@ -2523,7 +2530,7 @@ public class RubiksCube {
             cube = D(cube);
             cube = R(cube);
             cube = Dp(cube);
-            cube = R(cube);
+            cube = Rp(cube);
         } else if (cube[32] == solved[12]
                 && cube[50] == solved[48]
                 && true) {
@@ -2636,9 +2643,9 @@ public class RubiksCube {
             cube = D(cube);
             cube = L(cube);
             cube = D(cube);
-            cube = Bp(cube);
-            cube = Dp(cube);
             cube = B(cube);
+            cube = Dp(cube);
+            cube = Bp(cube);
             cube = Dp(cube);
             cube = R(cube);
             cube = Dp(cube);
@@ -2670,7 +2677,7 @@ public class RubiksCube {
             cube = Dp(cube);
             cube = Rp(cube);
             cube = Dp(cube);
-            cube = B(cube);
+            cube = Bp(cube);
             cube = D(cube);
             cube = B(cube);
         } else if (cube[32] == solved[37]
@@ -2681,7 +2688,7 @@ public class RubiksCube {
             cube = Dp(cube);
             cube = Rp(cube);
             cube = Dp(cube);
-            cube = B(cube);
+            cube = Bp(cube);
             cube = D(cube);
             cube = B(cube);
         } else if (cube[32] == solved[41]
@@ -2693,7 +2700,7 @@ public class RubiksCube {
             cube = Dp(cube);
             cube = Rp(cube);
             cube = Dp(cube);
-            cube = B(cube);
+            cube = Bp(cube);
             cube = D(cube);
             cube = B(cube);
         } else if (cube[32] == solved[46]
@@ -3249,7 +3256,7 @@ public class RubiksCube {
                 cube = D(cube);
                 cube = Lp(cube);
                 cube = Fp(cube);
-                cube = D(cube);
+                cube = Dp(cube);
             } else if (cube[15] == solved[13]
                     && cube[35] == solved[31]
                     && cube[47] == solved[49]
