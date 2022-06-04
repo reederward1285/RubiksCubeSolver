@@ -7,7 +7,7 @@ package com.mycompany.rubikscubesolver;
 
 import java.util.Scanner;
 
-/*
+/**
  * @author Daniel, Johannes, Oemer
  */
 public class RubiksCube {
@@ -17,20 +17,8 @@ public class RubiksCube {
     // cube[5] is spot number 6
     // test code right here
     public static void main(String[] arguments) {
-//        char[] cube = {'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W',
-//            'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
-//            'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G',
-//            'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
-//            'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
-//            'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',};
-        char[] cube = new char[54];
 
-        char[] solved = {'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W',
-            'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
-            'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G',
-            'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
-            'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
-            'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',};
+        char[] cube = new char[54];
 
         int w_counter = 0;
         int o_counter = 0;
@@ -94,13 +82,33 @@ public class RubiksCube {
                 whichSpot--;
             }
         }
-//        char[] cube = "WYBGWYGBYGORYOGGWYWRBRGOGYORGWBRRYWORRBOYBYWWOGBBBWOOR".toCharArray();
 //cube = "WYWYWYWYWOROROROROGBGBGBGBGRORORORORYWYWYWYWYBGBGBGBGB".toCharArray();
 
         System.out.println("Here is the scrambled cube:");
         System.out.println(cube);
 
-        // WhiteCross
+        cube = solve(cube);
+        
+        System.out.println("Here is the cube after the moves:");
+        System.out.println(cube);
+
+    }
+
+    /**
+     * Solves a scrambled cube.
+     *
+     * @param cube a scrambled cube
+     * @return the cube, solved if possible
+     */
+    public static char[] solve(char[] cube) {
+
+        char[] solved = {'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W',
+            'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
+            'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G',
+            'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
+            'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
+            'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',};
+
         cube = WhiteCross820(cube, solved);
         cube = WhiteCross411(cube, solved);
         cube = WhiteCross253(cube, solved);
@@ -118,14 +126,22 @@ public class RubiksCube {
         cube = PLL_corners(cube, solved);
         cube = PLL_edges(cube, solved);
 
-        System.out.println("Here is the cube after the moves:");
-        System.out.println(cube);
-
+        return cube;
     }
 
+    // TODO: document everything
+    // DOC comments zu allen methoden
 //WHITE-CROSS    
-    //White Cross (8-20)    
-    public static char[] WhiteCross820(char[] cube, char[] solved) {
+    /**
+     * White Cross (8-20)
+     *
+     * TODO: explain algorithm here
+     *
+     * @param cube
+     * @param solved
+     * @return
+     */
+    private static char[] WhiteCross820(char[] cube, char[] solved) {
         if (solved[7] == cube[7] && solved[19] == cube[19]) // case 1 - 8-20 : 8-20
         {
             return (cube);// do the moves here
