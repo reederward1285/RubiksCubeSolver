@@ -7,7 +7,7 @@ package com.mycompany.rubikscubesolver;
 
 import java.util.Scanner;
 
-/*
+/**
  * @author Daniel, Johannes, Oemer
  */
 public class RubiksCube {
@@ -17,20 +17,8 @@ public class RubiksCube {
     // cube[5] is spot number 6
     // test code right here
     public static void main(String[] arguments) {
-//        char[] cube = {'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W',
-//            'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
-//            'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G',
-//            'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
-//            'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
-//            'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',};
-        char[] cube = new char[54];
 
-        char[] solved = {'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W',
-            'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
-            'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G',
-            'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
-            'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
-            'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',};
+        char[] cube = new char[54];
 
         int w_counter = 0;
         int o_counter = 0;
@@ -43,64 +31,85 @@ public class RubiksCube {
 
         System.out.println("RUBIK'S CUBE SOLVER");
         System.out.println("");
-        System.out.println("Add your colors");
-        Scanner eingabe = new Scanner(System.in);
+//        System.out.println("Add your colors");
+//        Scanner eingabe = new Scanner(System.in);
+//
+//        for (int whichSpot = 0; whichSpot < cubeLength; whichSpot++) {
+//            System.out.println("Give " + whichSpot + ": ");
+//            //bool is_value_set = false;
+//            // while is_value_set != false
+//            char user_color = eingabe.next().charAt(0);
+//
+//            if (user_color == 'W' && w_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                w_counter++;
+//            } else if (user_color == 'O' && o_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                o_counter++;
+//            } else if (user_color == 'G' && g_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                g_counter++;
+//            } else if (user_color == 'R' && r_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                r_counter++;
+//            } else if (user_color == 'Y' && y_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                y_counter++;
+//            } else if (user_color == 'B' && b_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                b_counter++;
+//            } else {
+//                System.out.println();
+//
+//                if (user_color == 'B'
+//                        || user_color == 'Y'
+//                        || user_color == 'R'
+//                        || user_color == 'W'
+//                        || user_color == 'G'
+//                        || user_color == 'O') {
+//                    System.out.println("Color maximum used. Please re-try.");
+//                } else {
+//                    System.out.println("Value hasn't been set. Not a valid color.");
+//                }
+//
+//                System.out.println();
+//                whichSpot--;
+//            }
+//        }
 
-        for (int whichSpot = 0; whichSpot < cubeLength; whichSpot++) {
-            System.out.println("Give " + whichSpot + ": ");
-            //bool is_value_set = false;
-            // while is_value_set != false
-            char user_color = eingabe.next().charAt(0);
-
-            if (user_color == 'W' && w_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                w_counter++;
-            } else if (user_color == 'O' && o_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                o_counter++;
-            } else if (user_color == 'G' && g_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                g_counter++;
-            } else if (user_color == 'R' && r_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                r_counter++;
-            } else if (user_color == 'Y' && y_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                y_counter++;
-            } else if (user_color == 'B' && b_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                b_counter++;
-            } else {
-                System.out.println();
-
-                if (user_color == 'B'
-                        || user_color == 'Y'
-                        || user_color == 'R'
-                        || user_color == 'W'
-                        || user_color == 'G'
-                        || user_color == 'O') {
-                    System.out.println("Color maximum used. Please re-try.");
-                } else {
-                    System.out.println("Value hasn't been set. Not a valid color.");
-                }
-
-                System.out.println();
-                whichSpot--;
-            }
-        }
-//        char[] cube = "WYBGWYGBYGORYOGGWYWRBRGOGYORGWBRRYWORRBOYBYWWOGBBBWOOR".toCharArray();
-//cube = "WYWYWYWYWOROROROROGBGBGBGBGRORORORORYWYWYWYWYBGBGBGBGB".toCharArray();
+        cube = "WYWYWYWYWOROROROROGBGBGBGBGRORORORORYWYWYWYWYBGBGBGBGB".toCharArray();
 
         System.out.println("Here is the scrambled cube:");
         System.out.println(cube);
 
-        // WhiteCross
+        cube = solve(cube);
+        
+        System.out.println("Here is the cube after the moves:");
+        System.out.println(cube);
+
+    }
+
+    /**
+     * Solves a scrambled cube.
+     *
+     * @param cube a scrambled cube
+     * @return the cube, solved if possible
+     */
+    public static char[] solve(char[] cube) {
+
+        char[] solved = {'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W',
+            'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
+            'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G',
+            'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
+            'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y',
+            'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',};
+
         cube = WhiteCross820(cube, solved);
         cube = WhiteCross411(cube, solved);
         cube = WhiteCross253(cube, solved);
@@ -118,14 +127,22 @@ public class RubiksCube {
         cube = PLL_corners(cube, solved);
         cube = PLL_edges(cube, solved);
 
-        System.out.println("Here is the cube after the moves:");
-        System.out.println(cube);
-
+        return cube;
     }
 
+    // TODO: document everything
+    // DOC comments zu allen methoden
 //WHITE-CROSS    
-    //White Cross (8-20)    
-    public static char[] WhiteCross820(char[] cube, char[] solved) {
+    /**
+     * White Cross (8-20)
+     *
+     * TODO: explain algorithm here
+     *
+     * @param cube
+     * @param solved
+     * @return
+     */
+    private static char[] WhiteCross820(char[] cube, char[] solved) {
         if (solved[7] == cube[7] && solved[19] == cube[19]) // case 1 - 8-20 : 8-20
         {
             return (cube);// do the moves here
@@ -273,7 +290,7 @@ public class RubiksCube {
     }
 
     //White Cross (4-11)
-    public static char[] WhiteCross411(char[] cube, char[] solved) {
+    private static char[] WhiteCross411(char[] cube, char[] solved) {
         if (solved[3] == cube[3] && solved[10] == cube[10]) // case 1 - 4-11 : 4-11
         {
             return (cube);// do the moves here
@@ -435,7 +452,7 @@ public class RubiksCube {
     }
 
     //White Cross (2-53)
-    public static char[] WhiteCross253(char[] cube, char[] solved) {
+    private static char[] WhiteCross253(char[] cube, char[] solved) {
 
         if (solved[1] == cube[7] && solved[52] == cube[19]) // case 49 - 8-20 : 2-53
         {
@@ -575,7 +592,7 @@ public class RubiksCube {
     }
 
     //White Cross (6-29)
-    public static char[] WhiteCross629(char[] cube, char[] solved) {
+    private static char[] WhiteCross629(char[] cube, char[] solved) {
 
         if (solved[5] == cube[7] && solved[28] == cube[19]) // case 73 - 8-20 : 6-29
         {
@@ -709,7 +726,7 @@ public class RubiksCube {
 
 //F2L
     //F2L corners
-    public static char[] F2L_corners11052(char[] cube, char[] solved) {
+    private static char[] F2L_corners11052(char[] cube, char[] solved) {
         if (solved[0] == cube[0]
                 && solved[9] == cube[9]
                 && solved[51] == cube[51]) {
@@ -923,7 +940,7 @@ public class RubiksCube {
         return cube;
     }
 
-    public static char[] F2L_corners35430(char[] cube, char[] solved) {
+    private static char[] F2L_corners35430(char[] cube, char[] solved) {
         if (solved[2] == cube[2]
                 && solved[53] == cube[53]
                 && solved[29] == cube[29]) {
@@ -1191,7 +1208,7 @@ public class RubiksCube {
         return cube;
     }
 
-    public static char[] F2L_corners61811(char[] cube, char[] solved) {
+    private static char[] F2L_corners61811(char[] cube, char[] solved) {
         if (solved[6] == cube[6]
                 && solved[18] == cube[18]
                 && solved[11] == cube[11]) {
@@ -1454,7 +1471,7 @@ public class RubiksCube {
         return cube;
     }
 
-    public static char[] F2L_corners82710(char[] cube, char[] solved) {
+    private static char[] F2L_corners82710(char[] cube, char[] solved) {
         if (solved[8] == cube[8]
                 && solved[27] == cube[27]
                 && solved[20] == cube[20]) {
@@ -1781,7 +1798,7 @@ public class RubiksCube {
     }
 
     //F2L edges
-    public static char[] F2L_edges2330(char[] cube, char[] solved) {
+    private static char[] F2L_edges2330(char[] cube, char[] solved) {
         if (solved[23] == cube[23]
                 && solved[30] == cube[30]) {
             return (cube);
@@ -1980,7 +1997,7 @@ public class RubiksCube {
         return cube;
     }
 
-    public static char[] F2L_edges1421(char[] cube, char[] solved) {
+    private static char[] F2L_edges1421(char[] cube, char[] solved) {
         if (solved[14] == cube[14]
                 && solved[21] == cube[21]) {
             return (cube);
@@ -2177,7 +2194,7 @@ public class RubiksCube {
         return cube;
     }
 
-    public static char[] F2L_edges1248(char[] cube, char[] solved) {
+    private static char[] F2L_edges1248(char[] cube, char[] solved) {
         if (solved[12] == cube[12]
                 && solved[48] == cube[48]) {
             return (cube);
@@ -2376,7 +2393,7 @@ public class RubiksCube {
         return cube;
     }
 
-    public static char[] F2L_edges3250(char[] cube, char[] solved) {
+    private static char[] F2L_edges3250(char[] cube, char[] solved) {
         if (solved[32] == cube[32]
                 && solved[50] == cube[50]) {
             return (cube);
@@ -2571,7 +2588,7 @@ public class RubiksCube {
 
 //OLL
     //OLL edges
-    public static char[] OLL_edges(char[] cube, char[] solved) {
+    private static char[] OLL_edges(char[] cube, char[] solved) {
         if (cube[39] == solved[39] && cube[37] == solved[37] && cube[41] == solved[41] && cube[43] == solved[43]) // case 1:finished cross - - : -
         {
             System.out.println("OLL edges");
@@ -2652,7 +2669,7 @@ public class RubiksCube {
     }
 
     //OLL corners
-    public static char[] OLL_corners(char[] cube, char[] solved) {
+    private static char[] OLL_corners(char[] cube, char[] solved) {
         if (cube[36] == solved[36] && cube[38] == solved[38] && cube[42] == solved[42] && cube[44] == solved[44]) // case 1:finished cross - - : -
         {
             System.out.println("OLL corners");
@@ -2984,7 +3001,7 @@ public class RubiksCube {
 
 //PLL 
     //Part 1
-    public static char[] PLL_corners(char[] cube, char[] solved) {
+    private static char[] PLL_corners(char[] cube, char[] solved) {
         int D = 0;
         while (D < 3) {
             if (cube[24] == solved[24]
@@ -3139,7 +3156,7 @@ public class RubiksCube {
     }
 
     //Part 2
-    public static char[] PLL_edges(char[] cube, char[] solved) {
+    private static char[] PLL_edges(char[] cube, char[] solved) {
         if (cube[25] == solved[22]
                 && cube[16] == solved[13]
                 && cube[34] == solved[31]
@@ -3385,7 +3402,7 @@ public class RubiksCube {
     }
 
     // U
-    public static char[] U(char[] cube) {
+    private static char[] U(char[] cube) {
         // change the letters to be in the right spots
         char cube6 = cube[6];
         char cube0 = cube[0];
@@ -3474,7 +3491,7 @@ public class RubiksCube {
     }
 
     // U'
-    public static char[] Up(char[] cube) {
+    private static char[] Up(char[] cube) {
         // change the letters to be in the right spots
         char cube6 = cube[6];
         char cube0 = cube[0];
@@ -3563,7 +3580,7 @@ public class RubiksCube {
     }
 
     // R
-    public static char[] R(char[] cube) {
+    private static char[] R(char[] cube) {
         // change the letters to be in the right spots
         char cube2 = cube[2];
         char cube5 = cube[5];
@@ -3652,7 +3669,7 @@ public class RubiksCube {
     }
 
     // R'
-    public static char[] Rp(char[] cube) {
+    private static char[] Rp(char[] cube) {
         // change the letters to be in the right spots
         char cube2 = cube[2];
         char cube5 = cube[5];
@@ -3741,7 +3758,7 @@ public class RubiksCube {
     }
 
     // L
-    public static char[] L(char[] cube) {
+    private static char[] L(char[] cube) {
         // change the letters to be in the right spots
         char cube9 = cube[9];
         char cube10 = cube[10];
@@ -3830,7 +3847,7 @@ public class RubiksCube {
     }
 
     // L'
-    public static char[] Lp(char[] cube) {
+    private static char[] Lp(char[] cube) {
         // change the letters to be in the right spots
         char cube9 = cube[9];
         char cube10 = cube[10];
@@ -3919,7 +3936,7 @@ public class RubiksCube {
     }
 
     // D
-    public static char[] D(char[] cube) {
+    private static char[] D(char[] cube) {
         // change the letters to be in the right spots
         char cube15 = cube[15];
         char cube16 = cube[16];
@@ -4008,7 +4025,7 @@ public class RubiksCube {
     }
 
     // D'
-    public static char[] Dp(char[] cube) {
+    private static char[] Dp(char[] cube) {
         // change the letters to be in the right spots
         char cube15 = cube[15];
         char cube16 = cube[16];
@@ -4097,7 +4114,7 @@ public class RubiksCube {
     }
 
     // F
-    public static char[] F(char[] cube) {
+    private static char[] F(char[] cube) {
         // change the letters to be in the right spots
         char cube6 = cube[6];
         char cube7 = cube[7];
@@ -4186,7 +4203,7 @@ public class RubiksCube {
     }
 
     // F'
-    public static char[] Fp(char[] cube) {
+    private static char[] Fp(char[] cube) {
         // change the letters to be in the right spots
         char cube6 = cube[6];
         char cube7 = cube[7];
@@ -4275,7 +4292,7 @@ public class RubiksCube {
     }
 
     // B
-    public static char[] B(char[] cube) {
+    private static char[] B(char[] cube) {
         // change the letters to be in the right spots
         char cube0 = cube[0];
         char cube1 = cube[1];
@@ -4364,7 +4381,7 @@ public class RubiksCube {
     }
 
     // B'
-    public static char[] Bp(char[] cube) {
+    private static char[] Bp(char[] cube) {
         // change the letters to be in the right spots
         char cube0 = cube[0];
         char cube1 = cube[1];
