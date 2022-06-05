@@ -7,9 +7,9 @@ package com.mycompany.rubikscubesolver;
 
 /**
  *
- * @author Johan
+ * @author Johannes, Ömer, Daniel
  */
-package gui1;
+// package gui1;
 
 import javax.swing.*;
 import java.awt.Color;

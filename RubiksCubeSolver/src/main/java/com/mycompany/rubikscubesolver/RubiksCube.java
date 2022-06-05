@@ -31,58 +31,59 @@ public class RubiksCube {
 
         System.out.println("RUBIK'S CUBE SOLVER");
         System.out.println("");
-        System.out.println("Add your colors");
-        Scanner eingabe = new Scanner(System.in);
+//        System.out.println("Add your colors");
+//        Scanner eingabe = new Scanner(System.in);
+//
+//        for (int whichSpot = 0; whichSpot < cubeLength; whichSpot++) {
+//            System.out.println("Give " + whichSpot + ": ");
+//            //bool is_value_set = false;
+//            // while is_value_set != false
+//            char user_color = eingabe.next().charAt(0);
+//
+//            if (user_color == 'W' && w_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                w_counter++;
+//            } else if (user_color == 'O' && o_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                o_counter++;
+//            } else if (user_color == 'G' && g_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                g_counter++;
+//            } else if (user_color == 'R' && r_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                r_counter++;
+//            } else if (user_color == 'Y' && y_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                y_counter++;
+//            } else if (user_color == 'B' && b_counter < MAX_COLOR) {
+//                System.out.println("Value has been set");
+//                cube[whichSpot] = user_color;
+//                b_counter++;
+//            } else {
+//                System.out.println();
+//
+//                if (user_color == 'B'
+//                        || user_color == 'Y'
+//                        || user_color == 'R'
+//                        || user_color == 'W'
+//                        || user_color == 'G'
+//                        || user_color == 'O') {
+//                    System.out.println("Color maximum used. Please re-try.");
+//                } else {
+//                    System.out.println("Value hasn't been set. Not a valid color.");
+//                }
+//
+//                System.out.println();
+//                whichSpot--;
+//            }
+//        }
 
-        for (int whichSpot = 0; whichSpot < cubeLength; whichSpot++) {
-            System.out.println("Give " + whichSpot + ": ");
-            //bool is_value_set = false;
-            // while is_value_set != false
-            char user_color = eingabe.next().charAt(0);
-
-            if (user_color == 'W' && w_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                w_counter++;
-            } else if (user_color == 'O' && o_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                o_counter++;
-            } else if (user_color == 'G' && g_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                g_counter++;
-            } else if (user_color == 'R' && r_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                r_counter++;
-            } else if (user_color == 'Y' && y_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                y_counter++;
-            } else if (user_color == 'B' && b_counter < MAX_COLOR) {
-                System.out.println("Value has been set");
-                cube[whichSpot] = user_color;
-                b_counter++;
-            } else {
-                System.out.println();
-
-                if (user_color == 'B'
-                        || user_color == 'Y'
-                        || user_color == 'R'
-                        || user_color == 'W'
-                        || user_color == 'G'
-                        || user_color == 'O') {
-                    System.out.println("Color maximum used. Please re-try.");
-                } else {
-                    System.out.println("Value hasn't been set. Not a valid color.");
-                }
-
-                System.out.println();
-                whichSpot--;
-            }
-        }
-//cube = "WYWYWYWYWOROROROROGBGBGBGBGRORORORORYWYWYWYWYBGBGBGBGB".toCharArray();
+        cube = "WYWYWYWYWOROROROROGBGBGBGBGRORORORORYWYWYWYWYBGBGBGBGB".toCharArray();
 
         System.out.println("Here is the scrambled cube:");
         System.out.println(cube);
