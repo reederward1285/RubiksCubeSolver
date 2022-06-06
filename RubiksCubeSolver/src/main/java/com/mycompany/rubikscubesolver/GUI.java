@@ -1,15 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.mycompany.rubikscubesolver;
-
-/**
- *
- * @author Johannes, Ömer, Daniel
- */
-// package gui1;
+package gui1;
 
 import javax.swing.*;
 import java.awt.Color;
@@ -44,7 +33,7 @@ class CubePanel extends JPanel {
     }  
 }
 //entscheidet welche Seite anfängt
-public class GUI {
+public class GUI1 {
 
     public static Color current_color;
     public static int current_side = 0;
@@ -61,6 +50,30 @@ public class GUI {
             CreateFrame();
         });   
     } 
+    
+   public static String convertColorToString(JButton btn){
+       String colorName = null;
+       if (Color.WHITE.equals(btn.getBackground())){
+           colorName="W";
+       }
+       else if(Color.ORANGE.equals(btn.getBackground())){
+           colorName="O";
+      }
+       else if(Color.GREEN.equals(btn.getBackground())){
+           colorName="G";
+       }
+       else if(Color.RED.equals(btn.getBackground())){
+           colorName="R";
+       }
+       else if((Color.YELLOW.equals(btn.getBackground()))){
+           colorName="Y";
+       }
+       else if((Color.BLUE.equals(btn.getBackground()))){
+           colorName="B";
+       }
+       
+       return colorName;
+   }
              
     
 //das ist einfach zu verstehen
@@ -1392,8 +1405,70 @@ public class GUI {
         JButton solve_btn = new JButton();
         solve_btn.setText("Solve Cube");
         solve_btn.setBounds(800, 800, 100, 50);
-        solve_btn.addActionListener(e -> {
-            System.out.println("YOUR COMPUTER HAZ VIRUS");
+        solve_btn.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                                
+                
+                
+                char[] unsolved_cube = (convertColorToString(btn0)+
+                                        convertColorToString(btn1)+
+                                        convertColorToString(btn2)+
+                                        convertColorToString(btn3)+
+                                        convertColorToString(btn4)+
+                                        convertColorToString(btn5)+
+                                        convertColorToString(btn6)+
+                                        convertColorToString(btn7)+
+                                        convertColorToString(btn8)+
+                                        convertColorToString(btn9)+
+                                        convertColorToString(btn10)+
+                                        convertColorToString(btn11)+
+                                        convertColorToString(btn12)+
+                                        convertColorToString(btn13)+
+                                        convertColorToString(btn14)+
+                                        convertColorToString(btn15)+
+                                        convertColorToString(btn16)+
+                                        convertColorToString(btn17)+
+                                        convertColorToString(btn18)+
+                                        convertColorToString(btn19)+
+                                        convertColorToString(btn20)+
+                                        convertColorToString(btn21)+
+                                        convertColorToString(btn22)+
+                                        convertColorToString(btn23)+
+                                        convertColorToString(btn24)+
+                                        convertColorToString(btn25)+
+                                        convertColorToString(btn26)+
+                                        convertColorToString(btn27)+
+                                        convertColorToString(btn28)+
+                                        convertColorToString(btn29)+
+                                        convertColorToString(btn30)+
+                                        convertColorToString(btn31)+
+                                        convertColorToString(btn32)+
+                                        convertColorToString(btn33)+
+                                        convertColorToString(btn34)+
+                                        convertColorToString(btn35)+
+                                        convertColorToString(btn36)+
+                                        convertColorToString(btn37)+
+                                        convertColorToString(btn38)+
+                                        convertColorToString(btn39)+
+                                        convertColorToString(btn40)+
+                                        convertColorToString(btn41)+
+                                        convertColorToString(btn42)+
+                                        convertColorToString(btn43)+
+                                        convertColorToString(btn44)+
+                                        convertColorToString(btn45)+
+                                        convertColorToString(btn46)+
+                                        convertColorToString(btn47)+
+                                        convertColorToString(btn48)+
+                                        convertColorToString(btn49)+
+                                        convertColorToString(btn50)+
+                                        convertColorToString(btn51)+
+                                        convertColorToString(btn52)+
+                                        convertColorToString(btn53)
+                        ).toCharArray();
+                System.out.println(unsolved_cube);
+            }
         });
         
         //Buttons (nach hinten und zurück), Button Löser
@@ -1403,5 +1478,6 @@ public class GUI {
 
         //Zeichenfläche zum Fenster
         CubeFrame.add(main_panel); 
+        
    } 
 }
