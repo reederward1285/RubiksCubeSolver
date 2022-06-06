@@ -20,17 +20,17 @@ public class RubiksCube {
 
         char[] cube = new char[54];
 
-        int w_counter = 0;
-        int o_counter = 0;
-        int g_counter = 0;
-        int r_counter = 0;
-        int y_counter = 0;
-        int b_counter = 0;
-        final int MAX_COLOR = 9;
-        int cubeLength = cube.length;
-
-        System.out.println("RUBIK'S CUBE SOLVER");
-        System.out.println("");
+//        int w_counter = 0;
+//        int o_counter = 0;
+//        int g_counter = 0;
+//        int r_counter = 0;
+//        int y_counter = 0;
+//        int b_counter = 0;
+//        final int MAX_COLOR = 9;
+//        int cubeLength = cube.length;
+//
+//        System.out.println("RUBIK'S CUBE SOLVER");
+//        System.out.println("");
 //        System.out.println("Add your colors");
 //        Scanner eingabe = new Scanner(System.in);
 //
@@ -83,7 +83,7 @@ public class RubiksCube {
 //            }
 //        }
 
-        cube = "WYWYWYWYWOROROROROGBGBGBGBGRORORORORYWYWYWYWYBGBGBGBGB".toCharArray();
+        cube = "OBYOWRWGBWGROOBWOYBRYOGWOWBOBBRRGWYYGBOYYRRYRGGGWBWGYR".toCharArray();
 
         System.out.println("Here is the scrambled cube:");
         System.out.println(cube);
@@ -643,6 +643,8 @@ public class RubiksCube {
             cube = U(cube);
         } else if (solved[5] == cube[39] && solved[28] == cube[16]) // case 82 - 40-17 : 6-29
         {
+            cube = U(cube);
+            cube = U(cube);
             cube = L(cube);
             cube = L(cube);
             cube = U(cube);
@@ -1288,12 +1290,12 @@ public class RubiksCube {
                 && solved[11] == cube[18]) {
             cube = U(cube);
             cube = B(cube);
-            cube = Dp(cube);
+            cube = D(cube);
             cube = Bp(cube);
-            cube = Lp(cube);
-            cube = Dp(cube);
-            cube = L(cube);
             cube = Up(cube);
+            cube = L(cube);
+            cube = D(cube);
+            cube = Lp(cube);
         } else if (solved[6] == cube[9]
                 && solved[18] == cube[51]
                 && solved[11] == cube[0]) {
