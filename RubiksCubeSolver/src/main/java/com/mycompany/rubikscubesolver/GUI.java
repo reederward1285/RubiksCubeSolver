@@ -1392,6 +1392,9 @@ public class GUI {
         JButton solve_btn = new JButton();
         solve_btn.setText("Solve Cube");
         solve_btn.setBounds(800, 800, 100, 50);
+        solve_btn.addActionListener(e -> {
+            System.out.println("YOUR COMPUTER HAZ VIRUS");
+        });
         
         //Buttons (nach hinten und zurück), Button Löser
         main_panel.add(next_btn);
