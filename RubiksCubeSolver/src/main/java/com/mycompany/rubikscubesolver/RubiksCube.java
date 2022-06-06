@@ -83,7 +83,7 @@ public class RubiksCube {
 //            }
 //        }
 
-        cube = "OBYOWRWGBWGROOBWOYBRYOGWOWBOBBRRGWYYGBOYYRRYRGGGWBWGYR".toCharArray();
+        cube = "WRWOWRWWYOWGWOYYOORGROGRYBBGYOGRWYGBBYRBYOOYWGGRBBRBBG".toCharArray();
 
         System.out.println("Here is the scrambled cube:");
         System.out.println(cube);
@@ -1196,12 +1196,11 @@ public class RubiksCube {
                 && solved[53] == cube[17]
                 && solved[29] == cube[24]) {
             cube = Up(cube);
-            cube = Dp(cube);
-            cube = Lp(cube);
             cube = D(cube);
+            cube = Lp(cube);
+            cube = Dp(cube);
             cube = L(cube);
             cube = B(cube);
-            cube = D(cube);
             cube = D(cube);
             cube = Bp(cube);
             cube = U(cube);
