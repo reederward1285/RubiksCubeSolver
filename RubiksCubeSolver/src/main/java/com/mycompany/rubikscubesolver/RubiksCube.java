@@ -83,7 +83,7 @@ public class RubiksCube {
 //            }
 //        }
 
-        cube = "WRWOWRWWYOWGWOYYOORGROGRYBBGYOGRWYGBBYRBYOOYWGGRBBRBBG".toCharArray();
+        cube = "WOBRWBYGYGGOGOYBBGBOGBGBWYROWRORYYRWRRGRYWWOROWBWBGOYY".toCharArray();
 
         System.out.println("Here is the scrambled cube:");
         System.out.println(cube);
@@ -638,6 +638,7 @@ public class RubiksCube {
             cube = R(cube);
         } else if (solved[5] == cube[43] && solved[28] == cube[46]) // case 81 - 44-47 : 6-29
         {
+            cube = Up(cube);
             cube = B(cube);
             cube = B(cube);
             cube = U(cube);
@@ -3004,7 +3005,7 @@ public class RubiksCube {
     //Part 1
     private static char[] PLL_corners(char[] cube, char[] solved) {
         int D = 0;
-        while (D < 3) {
+        while (D < 4) {
             if (cube[24] == solved[24]
                     && cube[26] == solved[26]
                     && cube[45] == solved[45]
@@ -3145,7 +3146,7 @@ public class RubiksCube {
                 cube = D(cube);
                 cube = Lp(cube);
                 cube = Fp(cube);
-                cube = Dp(cube);
+                cube = D(cube);
             } else {
                 cube = D(cube);
                 D++;
