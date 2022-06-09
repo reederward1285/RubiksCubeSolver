@@ -16,9 +16,12 @@ public class RubiksCube {
     // so, char[] cube: cube[0] is spot number 1,
     // cube[5] is spot number 6
     // test code right here
+    public static String moves = "";
+    
     public static void main(String[] arguments) {
 
         char[] cube = new char[54];
+        String[] moves = new String[54];
 
 //        int w_counter = 0;
 //        int o_counter = 0;
@@ -126,9 +129,11 @@ public class RubiksCube {
         cube = OLL_corners(cube, solved);
         cube = PLL_corners(cube, solved);
         cube = PLL_edges(cube, solved);
-
+      
+        
         return cube;
     }
+    
 
     // TODO: document everything
     // DOC comments zu allen methoden
@@ -2716,7 +2721,8 @@ public class RubiksCube {
             cube = Lp(cube);
             cube = Dp(cube);
             cube = R(cube);
-        } else if (cube[15] == solved[40] && cube[17] == solved[40] && cube[33] == solved[40] && cube[35] == solved[40]) // case 6:H-shape horizontal - - : -
+        } 
+        else if (cube[15] == solved[40] && cube[17] == solved[40] && cube[33] == solved[40] && cube[35] == solved[40]) // case 6:H-shape horizontal - - : -
         {
             cube = D(cube);
             cube = F(cube);
@@ -2733,7 +2739,8 @@ public class RubiksCube {
             cube = Lp(cube);
             cube = Dp(cube);
             cube = Fp(cube);
-        } else if (cube[24] == solved[40] && cube[26] == solved[40] && cube[45] == solved[40] && cube[47] == solved[40]) // case 7:H-shape vertical - - : -
+        } 
+        else if (cube[24] == solved[40] && cube[26] == solved[40] && cube[45] == solved[40] && cube[47] == solved[40]) // case 7:H-shape vertical - - : -
         {
             cube = F(cube);
             cube = L(cube);
@@ -3488,7 +3495,8 @@ public class RubiksCube {
         cube[29] = cube51;
 
         // return the new array with the correct spots
-        System.out.println("U");
+        System.out.println("U ");
+        moves += "U ";
         return cube;
     }
 
@@ -3578,6 +3586,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         System.out.println("U'");
+        moves += "U' ";
         return cube;
     }
 
@@ -3667,6 +3676,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         System.out.println("R");
+        moves+="R ";
         return cube;
     }
 
@@ -3756,6 +3766,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         System.out.println("R'");
+        moves += "R' ";
         return cube;
     }
 
@@ -3845,6 +3856,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         System.out.println("L");
+        moves+="L ";
         return cube;
     }
 
@@ -3934,6 +3946,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         System.out.println("L'");
+        moves += "L' ";
         return cube;
     }
 
@@ -4023,6 +4036,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         System.out.println("D");
+        moves+= "D ";
         return cube;
     }
 
@@ -4112,6 +4126,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         System.out.println("D'");
+        moves += "D' ";
         return cube;
     }
 
@@ -4201,6 +4216,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         System.out.println("F");
+        moves += "F ";
         return cube;
     }
 
@@ -4290,6 +4306,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         System.out.println("F'");
+        moves += "F' ";
         return cube;
     }
 
@@ -4379,6 +4396,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         System.out.println("B");
+        moves+= "B ";
         return cube;
     }
 
@@ -4468,6 +4486,7 @@ public class RubiksCube {
 
         // return the new array with the correct spots
         System.out.println("B'");
+        moves += "B' ";
         return cube;
     }
 }

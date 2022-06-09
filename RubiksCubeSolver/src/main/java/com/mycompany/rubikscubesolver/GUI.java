@@ -1,4 +1,4 @@
-package gui1;
+package com.mycompany.rubikscubesolver;
 
 import javax.swing.*;
 import java.awt.Color;
@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.*;
 import java.awt.*;
 
-//
+
 class CubePanel extends JPanel {
  
     //schwarze Umrandung
@@ -33,7 +33,7 @@ class CubePanel extends JPanel {
     }  
 }
 //entscheidet welche Seite anfängt
-public class GUI1 {
+public class GUI {
 
     public static Color current_color;
     public static int current_side = 0;
@@ -83,7 +83,7 @@ public class GUI1 {
         JFrame CubeFrame = new JFrame("Rubik's Cube Solver - Daniel, Johannes, Ömer");
         /* Wir setzen die Breite und die Höhe 
            unseres Fensters auf 200 Pixel */        
-        CubeFrame.setSize(1000,1000);
+        CubeFrame.setSize(1400,1000);
         /* Hinzufügen einer einfachen Komponente 
            (hier: JLabel) */
         // meinFrame.add(new JLabel("Add your colors"));
@@ -1401,6 +1401,11 @@ public class GUI1 {
         previous_btn.setText("Previous");
         previous_btn.setBounds(100, 450, 100, 50);
         
+        
+        JTextArea solutionInput = new JTextArea();
+        solutionInput.setBounds(1000, 50, 800, 850);
+
+        
         //Button Löser
         JButton solve_btn = new JButton();
         solve_btn.setText("Solve Cube");
@@ -1408,10 +1413,6 @@ public class GUI1 {
         solve_btn.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                                
-                
-                
                 char[] unsolved_cube = (convertColorToString(btn0)+
                                         convertColorToString(btn1)+
                                         convertColorToString(btn2)+
@@ -1468,6 +1469,19 @@ public class GUI1 {
                                         convertColorToString(btn53)
                         ).toCharArray();
                 System.out.println(unsolved_cube);
+                String solution_string = "";
+                char[] solved_cube = RubiksCube.solve(unsolved_cube);
+                /*
+                for (int i = 0; i < RubiksCube.moves.length(); i++){
+                    solution_string+= RubiksCube.moves.charAt(i);
+                    solution_string+="\n";
+                }
+                */
+                
+                solution_string += RubiksCube.moves;
+                solutionInput.append(solution_string);
+                main_panel.setLayout(null);
+
             }
         });
         
@@ -1475,6 +1489,9 @@ public class GUI1 {
         main_panel.add(next_btn);
         main_panel.add(previous_btn);
         main_panel.add(solve_btn);
+        main_panel.add(solutionInput);
+        
+        main_panel.add(btn9);
 
         //Zeichenfläche zum Fenster
         CubeFrame.add(main_panel); 
